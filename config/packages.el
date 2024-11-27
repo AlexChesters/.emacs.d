@@ -4,10 +4,13 @@
 
 ;;; Code:
 
-;; company
-(use-package company
+;; copilot
+(use-package copilot
+  :load-path (lambda () (expand-file-name "packages/copilot.el" user-emacs-directory))
+  ;; don't show in mode line
+  :diminish
   :config
-  (global-company-mode))
+  (add-hook 'prog-mode-hook 'copilot-mode))
 
 ;; flycheck
 ;; https://gist.github.com/AlexChesters/9ec108eab4f50c3ca335e897ddffbbd9
