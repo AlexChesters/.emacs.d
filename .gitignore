@@ -10,5 +10,8 @@
 # Undo-tree save-files
 *.~undo-tree
 
-# transient stuff
+# transient
 transient/
+
+# projectile
+projectile-bookmarks.eld
