@@ -8,6 +8,7 @@
 ;; config files
 (load-file "~/.emacs.d/config/keys.el") ; Loading key-bindings
 (load-file "~/.emacs.d/config/appearance.el") ; Loading custom appearance stuff
+(load-file "~/.emacs.d/config/packages.el") ; Loading custom package configuration
 
 ;; melpa
 (require 'package)
