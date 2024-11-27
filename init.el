@@ -1,6 +1,9 @@
 ;; start full screen
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
+;; config files
+(load-file "~/.emacs.d/config/keys.el") ; Loading key-bindings
+
 ;; melpa
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
