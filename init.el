@@ -1,3 +1,7 @@
+;; use-package
+(eval-when-compile
+  (require 'use-package))
+
 ;; start full screen
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
