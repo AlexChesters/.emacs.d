@@ -3,6 +3,7 @@
 
 ;; config files
 (load-file "~/.emacs.d/config/keys.el") ; Loading key-bindings
+(load-file "~/.emacs.d/config/appearance.el") ; Loading custom appearance stuff
 
 ;; melpa
 (require 'package)

@@ -5,6 +5,7 @@
 (global-set-key (kbd "s-d") 'dired) ; Cmd+d - dired
 (global-set-key (kbd "s-<return>") 'eval-buffer) ; Cmd+return - eval buffer
 (global-set-key (kbd "s-b") 'ibuffer) ; Cmd+b - ibuffer
+(global-set-key (kbd "s-o") 'find-file) ; Cmd+o - find file
 
 ;; magit
 (define-prefix-command 'magit-kb-map)
