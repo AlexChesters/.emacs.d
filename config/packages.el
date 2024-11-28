@@ -6,9 +6,7 @@
 
 ;; all-the-icons
 (use-package all-the-icons
-  :if (display-graphic-p)
-  :config
-  (setq neo-theme (if (display-graphic-p) 'icons 'arrow)))
+  :if (display-graphic-p))
 
 ;; cfn-mode
 (use-package cfn-mode
@@ -73,6 +71,16 @@ See URL `http://pypi.python.org/pypi/ruff'."
                 (when (buffer-file-name)
                   (setq-local flycheck-checkers '(python-ruff))
                   (flycheck-mode))))))
+
+;; neotree
+(use-package neotree
+  :config
+  ;; https://www.emacswiki.org/emacs/NeoTree#h5o-9
+  (setq projectile-switch-project-action 'neotree-projectile-action)
+  ;; all-the-icons
+  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+  (setq neo-window-fixed-size 0)
+  (setq neo-window-width 40))
 
 ;; projectile
 (use-package projectile
