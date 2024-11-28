@@ -28,6 +28,11 @@
   (add-to-list 'copilot-indentation-alist '(emacs-lisp-mode 2))
   (add-to-list 'copilot-indentation-alist '(magit-mode 2)))
 
+;; diff-hl
+(use-package diff-hl
+  :config
+  (global-diff-hl-mode))
+
 ;; flycheck
 ;; https://gist.github.com/AlexChesters/9ec108eab4f50c3ca335e897ddffbbd9
 (flycheck-define-checker python-ruff
