@@ -17,6 +17,7 @@
 (global-set-key (kbd "s-b") 'ibuffer) ; Cmd+b - ibuffer
 (global-set-key (kbd "s-o") 'find-file) ; Cmd+o - find file
 (global-set-key (kbd "s-k") 'kill-whole-line) ; Cmd+k - kill whole line
+(global-set-key (kbd "s-S-<return>") 'restart-emacs) ; Cmd+Shift+return - restart emacs
 
 ;; magit
 (define-prefix-command 'magit-kb-map)
