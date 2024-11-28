@@ -88,24 +88,25 @@ See URL `http://pypi.python.org/pypi/ruff'."
   :config
   (helm-projectile-on))
 
-;; neotree
-(use-package neotree
-  :config
-  ;; all-the-icons
-  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-  (setq neo-window-fixed-size 0)
-  (setq neo-window-width 40)
-  (setq neo-autorefresh t)
-  (setq neo-refresh-timer-delay 0.1))
-
 ;; projectile
 (use-package projectile
   :config
   (projectile-mode +1)
-  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map))
+  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+  (add-hook 'projectile-after-switch-project-hook 'projectile-update-treemacs))
 
 ;; swiper
 (use-package swiper)
+
+;; treemacs
+(use-package treemacs
+  :config
+  (setq treemacs-width 50))
+
+;; treemacs-projectile
+(use-package treemacs-projectile
+  :after (treemacs projectile)
+  :ensure t)
 
 (provide 'packages)
 

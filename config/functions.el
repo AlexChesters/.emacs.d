@@ -20,7 +20,12 @@
   (yank)
   (newline)
   (yank)
-)
+  )
+
+(defun projectile-update-treemacs ()
+  "Update treemacs upon projectile project change but without updating focus (https://github.com/Alexander-Miller/treemacs/issues/1072)."
+  (save-selected-window
+    (treemacs-display-current-project-exclusively)))
 
 (provide 'functions)
 
