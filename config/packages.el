@@ -32,6 +32,8 @@
   (add-to-list 'copilot-indentation-alist '(emacs-lisp-mode 2))
   (add-to-list 'copilot-indentation-alist '(magit-mode 2)))
 
+;; copilot-chat
+(use-package copilot-chat)
 ;; diff-hl
 (use-package diff-hl
   :config
@@ -92,7 +94,9 @@ See URL `http://pypi.python.org/pypi/ruff'."
   ;; all-the-icons
   (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
   (setq neo-window-fixed-size 0)
-  (setq neo-window-width 40))
+  (setq neo-window-width 40)
+  (setq neo-autorefresh t)
+  (setq neo-refresh-timer-delay 0.1))
 
 ;; projectile
 (use-package projectile

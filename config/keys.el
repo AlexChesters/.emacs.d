@@ -7,6 +7,13 @@
 ;; copilot
 (define-key copilot-mode-map (kbd "<tab>") 'atc/copilot-complete-or-tab) ; Cmd+tab - custom copilot completion function
 
+;; copilot-chat
+(define-prefix-command 'copilot-chat-kb-map)
+(global-set-key (kbd "C-c c") 'copilot-chat-kb-map)
+(define-key 'copilot-chat-kb-map (kbd "c") 'copilot-chat-display) ; C-c c c - copilot-chat display
+(define-key 'copilot-chat-kb-map (kbd "r") 'copilot-chat-reset) ; C-c c r - copilot-chat reset
+(define-key 'copilot-chat-kb-map (kbd "e") 'copilot-chat-explain) ; C-c c s - copilot-chat explain selected code
+
 ;; editing
 (global-set-key (kbd "M-<down>") 'duplicate-line) ; Alt+down - duplicate line
 
