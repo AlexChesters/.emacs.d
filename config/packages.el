@@ -89,8 +89,6 @@ See URL `http://pypi.python.org/pypi/ruff'."
 ;; neotree
 (use-package neotree
   :config
-  ;; https://www.emacswiki.org/emacs/NeoTree#h5o-9
-  (setq projectile-switch-project-action 'neotree-projectile-action)
   ;; all-the-icons
   (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
   (setq neo-window-fixed-size 0)
