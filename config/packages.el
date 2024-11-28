@@ -4,6 +4,16 @@
 
 ;;; Code:
 
+;; cfn-mode
+(use-package cfn-mode
+  :config
+  (add-to-list 'magic-mode-alist
+    '("\\(.\\|\n\\)*Type: AWS::" . cfn-mode))
+  ;; hack to stop this file from having cfn-mode enabled based on the
+  ;; presence of the cfn-mode magic-mode-alist set up
+  (add-to-list 'magic-mode-alist
+    '("\\(.\\|\n\\)*;;; Commentary" . emacs-lisp-mode)))
+
 ;; copilot
 (use-package copilot
   :load-path (lambda () (expand-file-name "packages/copilot.el" user-emacs-directory))
