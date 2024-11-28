@@ -4,6 +4,9 @@
 
 ;;; Code:
 
+;; hide toolbar
+(tool-bar-mode -1)
+
 ;; font size
 (set-face-attribute 'default nil :height 150)
 
