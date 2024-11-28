@@ -4,6 +4,8 @@
 
 ;; start full screen
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
+;; disable startup message
+(setq inhibit-startup-message t)
 
 ;; config files
 (load-file "~/.emacs.d/config/packages.el") ; Loading custom package configuration
