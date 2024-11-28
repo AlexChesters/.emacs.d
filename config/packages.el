@@ -78,6 +78,14 @@ See URL `http://pypi.python.org/pypi/ruff'."
                   (setq-local flycheck-checkers '(python-ruff))
                   (flycheck-mode))))))
 
+;; helm
+(use-package helm)
+
+;; helm-projectile
+(use-package helm-projectile
+  :config
+  (helm-projectile-on))
+
 ;; neotree
 (use-package neotree
   :config
