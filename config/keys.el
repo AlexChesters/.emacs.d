@@ -5,7 +5,7 @@
 ;;; Code:
 
 ;; copilot
-(global-set-key (kbd "<tab>") 'atc/copilot-complete-or-accept) ; Cmd+tab - custom copilot completion function
+(define-key copilot-mode-map (kbd "<tab>") 'atc/copilot-complete-or-tab) ; Cmd+tab - custom copilot completion function
 
 ;; misc
 (global-set-key (kbd "s-w") 'kill-buffer-and-window) ; Cmd+w - close buffer and window

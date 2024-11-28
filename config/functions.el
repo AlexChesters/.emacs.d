@@ -4,16 +4,13 @@
 
 ;;; Code:
 
-; https://robert.kra.hn/posts/2023-02-22-copilot-emacs-setup/#copilot-specific
-(defun atc/copilot-complete-or-accept ()
-  "Command that either triggers a completion or accepts one if one is available."
+; https://robert.kra.hn/posts/2023-02-22-copilot-emacs-setup/#tab-key
+(defun atc/copilot-complete-or-tab ()
+    "Tab command that will complete with copilot if a completion is available, otherwise normal tab-indent."
   (interactive)
-  (if (copilot--overlay-visible)
-      (progn
-        (copilot-accept-completion)
-        (open-line 1)
-        (next-line))
-    (copilot-complete)))
+  (or (copilot-accept-completion)
+      (indent-for-tab-command)))
+
 
 (provide 'functions)
 
