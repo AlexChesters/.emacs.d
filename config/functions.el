@@ -27,6 +27,10 @@
   (save-selected-window
     (treemacs-display-current-project-exclusively)))
 
+(defun atc/projectile-open-emacs-project ()
+  "Open the Emacs project in projectile."
+  (projectile-switch-project-by-name "~/.emacs.d"))
+
 (provide 'functions)
 
 ;;; functions.el ends here

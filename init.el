@@ -1,3 +1,9 @@
+;;; init.el --- Emacs entry point
+
+;;; Commentary:
+
+;;; Code:
+
 ;; use-package
 (eval-when-compile
   (require 'use-package))
@@ -13,6 +19,9 @@
 (load-file "~/.emacs.d/config/keys.el") ; Loading key-bindings
 (load-file "~/.emacs.d/config/appearance.el") ; Loading custom appearance stuff
 (load-file "~/.emacs.d/config/misc.el") ; Loading miscellanous config
+
+;; boot behaviour
+(add-hook 'after-init-hook 'atc/projectile-open-emacs-project)
 
 ;; melpa
 (require 'package)
@@ -32,3 +41,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(provide 'init)
+
+;;; init.el ends here

@@ -93,7 +93,8 @@ See URL `http://pypi.python.org/pypi/ruff'."
   :config
   (projectile-mode +1)
   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
-  (add-hook 'projectile-after-switch-project-hook 'projectile-update-treemacs))
+  (add-hook 'projectile-after-switch-project-hook 'projectile-update-treemacs)
+  (setq projectile-switch-project-action #'projectile-dired))
 
 ;; swiper
 (use-package swiper)
