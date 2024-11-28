@@ -37,6 +37,12 @@
   :config
   (global-diff-hl-mode))
 
+;; doom-modeline
+(use-package doom-modeline
+  :config
+  (doom-modeline-mode 1)
+  (setq doom-modeline-buffer-file-name-style 'truncate-nil))
+
 ;; flycheck
 ;; https://gist.github.com/AlexChesters/9ec108eab4f50c3ca335e897ddffbbd9
 (flycheck-define-checker python-ruff
