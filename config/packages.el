@@ -59,6 +59,9 @@ See URL `http://pypi.python.org/pypi/ruff'."
   (projectile-mode +1)
   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map))
 
+;; swiper
+(use-package swiper)
+
 (provide 'packages)
 
 ;;; packages.el ends here

@@ -28,6 +28,9 @@
 (global-set-key (kbd "s-<right>") 'next-buffer) ; Cmd+right-arrow, moves to next buffer
 (global-set-key (kbd "s-<left>") 'previous-buffer) ; Cmd+left-arrow, moves to previous buffer
 
+;; searching
+(global-set-key (kbd "s-f") 'swiper) ; Cmd+f - swiper
+
 (provide 'keys)
 
 ;;; keys.el ends here
