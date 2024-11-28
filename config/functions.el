@@ -11,6 +11,16 @@
   (or (copilot-accept-completion)
       (indent-for-tab-command)))
 
+; https://stackoverflow.com/a/551053
+(defun duplicate-line ()
+  "Duplicate the current line."
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+  (newline)
+  (yank)
+)
 
 (provide 'functions)
 

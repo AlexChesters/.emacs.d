@@ -7,6 +7,9 @@
 ;; copilot
 (define-key copilot-mode-map (kbd "<tab>") 'atc/copilot-complete-or-tab) ; Cmd+tab - custom copilot completion function
 
+;; editing
+(global-set-key (kbd "M-<down>") 'duplicate-line) ; Alt+down - duplicate line
+
 ;; misc
 (global-set-key (kbd "s-w") 'kill-buffer-and-window) ; Cmd+w - close buffer and window
 (global-set-key (kbd "s-d") 'dired) ; Cmd+d - dired
