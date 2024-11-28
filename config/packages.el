@@ -4,6 +4,12 @@
 
 ;;; Code:
 
+;; all-the-icons
+(use-package all-the-icons
+  :if (display-graphic-p)
+  :config
+  (setq neo-theme (if (display-graphic-p) 'icons 'arrow)))
+
 ;; cfn-mode
 (use-package cfn-mode
   :config
