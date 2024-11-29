@@ -16,6 +16,7 @@
 
 ;; editing
 (global-set-key (kbd "M-<down>") 'duplicate-line) ; Alt+down - duplicate line
+(global-set-key (kbd "C-c s") 'scratch) ; C-c s - scratch buffer
 
 ;; misc
 (global-set-key (kbd "s-w") 'kill-buffer-and-window) ; Cmd+w - close buffer and window
