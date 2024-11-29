@@ -5,8 +5,8 @@
 ;; Author:   Dmitry Gutov <dmitry@gutov.dev>
 ;; URL:      https://github.com/dgutov/diff-hl
 ;; Keywords: vc, diff
-;; Package-Version: 20241012.2142
-;; Package-Revision: 9e39dfc666ac
+;; Package-Version: 20241128.2332
+;; Package-Revision: d9f54b512a0f
 ;; Package-Requires: ((cl-lib "0.2") (emacs "25.1"))
 
 ;; This file is part of GNU Emacs.
@@ -1163,7 +1163,7 @@ CONTEXT-LINES is the size of the unified diff context, defaults to 0."
     (vc-git-command (current-buffer) 0 file "ls-files" "-s")
     (and
      (goto-char (point-min))
-     (re-search-forward "^[0-9]+ \\([0-9a-f]+\\)")
+     (re-search-forward "^[0-9]+ \\([0-9a-f]+\\)" nil t)
      (match-string-no-properties 1))))
 
 (defun diff-hl-git-index-revision (file object-name)

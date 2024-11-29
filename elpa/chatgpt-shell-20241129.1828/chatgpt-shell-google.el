@@ -4,6 +4,7 @@
 
 ;; Author: Alvaro Ramirez https://xenodium.com
 ;; URL: https://github.com/xenodium/chatgpt-shell
+;; Package-Requires: ((emacs "28.1") (shell-maker "0.72.1"))
 
 ;; This package is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -26,6 +27,8 @@
 
 (eval-when-compile
   (require 'cl-lib))
+(require 'shell-maker)
+(require 'map)
 
 (defcustom chatgpt-shell-google-key nil
   "Google API key as a string or a function that loads and returns it."
@@ -48,17 +51,18 @@ If you use Gemini through a proxy service, change the URL base."
 (cl-defun chatgpt-shell-google-make-model (&key version short-version path token-width context-window)
   "Create a Google model.
 
- Set VERSION, SHORT-VERSION, PATH, TOKEN-WIDTH, CONTEXT-WINDOW and VALIDATE-COMMAND handler."
+Set VERSION, SHORT-VERSION, PATH, TOKEN-WIDTH, CONTEXT-WINDOW and
+VALIDATE-COMMAND handler."
   (unless version
     (error "Missing mandatory :version param"))
   (unless short-version
     (error "Missing mandatory :short-version param"))
   (unless path
     (error "Missing mandatory :path param"))
-  (unless (integerp token-width)
-    (error ":token-width must be an integer"))
-  (unless (integerp context-window)
-    (error ":context-window must be an integer"))
+  (unless token-width
+    (error "Missing mandatory :token-width param for %s" version))
+  (unless context-window
+    (error "Missing mandatory :context-window param for %s" version))
   `((:version . ,version)
     (:short-version . ,short-version)
     (:label . "Gemini")
