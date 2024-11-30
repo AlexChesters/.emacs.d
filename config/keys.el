@@ -5,7 +5,7 @@
 ;;; Code:
 
 ;; copilot
-(define-key copilot-mode-map (kbd "<tab>") 'atc/copilot-complete-or-tab) ; Cmd+tab - custom copilot completion function
+(define-key copilot-mode-map (kbd "<tab>") 'atc/copilot-complete-or-tab) ; tab - custom copilot completion function
 
 ;; copilot-chat
 (define-prefix-command 'copilot-chat-kb-map)
@@ -18,6 +18,11 @@
 (global-set-key (kbd "M-<down>") 'duplicate-line) ; Alt+down - duplicate line
 (global-set-key (kbd "C-c s") 'scratch) ; C-c s - scratch buffer
 
+;; magit
+(define-prefix-command 'magit-kb-map)
+(global-set-key (kbd "C-c v") 'magit-kb-map)
+(define-key 'magit-kb-map (kbd "s") 'magit-status)
+
 ;; misc
 (global-set-key (kbd "s-w") 'kill-buffer-and-window) ; Cmd+w - close buffer and window
 (global-set-key (kbd "s-d") 'dired) ; Cmd+d - dired
@@ -26,11 +31,7 @@
 (global-set-key (kbd "s-o") 'find-file) ; Cmd+o - find file
 (global-set-key (kbd "s-k") 'kill-whole-line) ; Cmd+k - kill whole line
 (global-set-key (kbd "s-S-<return>") 'restart-emacs) ; Cmd+Shift+return - restart emacs
-
-;; magit
-(define-prefix-command 'magit-kb-map)
-(global-set-key (kbd "C-c v") 'magit-kb-map)
-(define-key 'magit-kb-map (kbd "s") 'magit-status)
+(global-set-key (kbd "s-t") 'tetris) ; Cmd+t - tetris
 
 ;; navigation
 (global-set-key (kbd "M-s-<left>") 'windmove-left) ; Cmd+alt+left, Move left buffer
