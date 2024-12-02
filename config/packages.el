@@ -24,13 +24,9 @@
   ;; don't show in mode line
   :diminish
   :config
-  (add-hook 'prog-mode-hook 'copilot-mode)
-  (add-to-list 'copilot-indentation-alist '(prog-mode 2))
-  (add-to-list 'copilot-indentation-alist '(org-mode 2))
-  (add-to-list 'copilot-indentation-alist '(text-mode 2))
-  (add-to-list 'copilot-indentation-alist '(closure-mode 2))
-  (add-to-list 'copilot-indentation-alist '(emacs-lisp-mode 2))
-  (add-to-list 'copilot-indentation-alist '(magit-mode 2)))
+  ; disable copilot mode for now
+  ;(add-hook 'prog-mode-hook 'copilot-mode)
+  )
 
 ;; copilot-chat
 (use-package copilot-chat)
