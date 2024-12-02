@@ -18,3 +18,6 @@ projectile-bookmarks.eld
 
 # cache
 .cache/
+
+# elpy stores venvs in this folder
+elpy/

@@ -31,17 +31,6 @@
   "Open the Emacs project in projectile."
   (projectile-switch-project-by-name "~/.emacs.d"))
 
-(defun atc/configure-python ()
-  "Configure various python settings (venv path, enable eglot etc)."
-  (when buffer-file-name
-    (let* ((venv-root (locate-dominating-file buffer-file-name ".venv"))
-	  (venv-path (file-name-as-directory (file-name-concat venv-root ".venv"))))
-      (message "atc/setpyenv activating venv: %s" venv-path)
-      (pyvenv-activate venv-path)
-      (eglot-ensure)
-      )))
-(add-hook 'python-mode-hook 'atc/configure-python)
-
 (provide 'functions)
 
 ;;; functions.el ends here

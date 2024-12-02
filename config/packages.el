@@ -16,7 +16,11 @@
   ;; hack to stop this file from having cfn-mode enabled based on the
   ;; presence of the cfn-mode magic-mode-alist set up
   (add-to-list 'magic-mode-alist
-    '("\\(.\\|\n\\)*;;; Commentary" . emacs-lisp-mode)))
+	       '("\\(.\\|\n\\)*;;; Commentary" . emacs-lisp-mode)))
+
+; company mode
+(use-package company
+  :hook (after-init . global-company-mode))
 
 ;; copilot
 (use-package copilot
@@ -41,13 +45,11 @@
   (doom-modeline-mode 1)
   (setq doom-modeline-buffer-file-name-style 'truncate-nil))
 
-;; eglot
-(use-package eglot
-  :hook (python-mode . eglot-ensure))
-
-;; envrc
-(use-package envrc
-  :hook (after-init . envrc-global-mode))
+;; elpy
+(use-package elpy
+  :ensure t
+  :init
+  (elpy-enable))
 
 ;; flycheck
 ;; https://gist.github.com/AlexChesters/9ec108eab4f50c3ca335e897ddffbbd9
@@ -99,10 +101,6 @@ See URL `http://pypi.python.org/pypi/ruff'."
   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
   (add-hook 'projectile-after-switch-project-hook 'projectile-update-treemacs)
   (setq projectile-switch-project-action #'projectile-dired))
-
-;; pyvenv
-(use-package pyvenv
-  :hook (python-mode . pyvenv-mode))
 
 ;; swiper
 (use-package swiper)
