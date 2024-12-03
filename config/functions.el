@@ -12,7 +12,7 @@
   (or (copilot-accept-completion)
       (indent-for-tab-command)))
 
-; https://stackoverflow.com/a/551053
+;; https://stackoverflow.com/a/551053
 (defun duplicate-line-below ()
   "Duplicate the current line below."
   (interactive)
@@ -20,6 +20,17 @@
   (kill-line)
   (yank)
   (newline)
+  (yank))
+
+;; TODO - fix this function
+(defun duplicate-line-above ()
+  "Duplicate the current line above."
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+  (newline)
+  (forward-line -1)
   (yank))
 
 (declare-function treemacs-display-current-project-exclusively "nil" ())
