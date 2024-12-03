@@ -21,3 +21,6 @@ projectile-bookmarks.eld
 
 # elpy stores venvs in this folder
 elpy/
+
+# anaconda stores venvs in this folder
+anaconda-mode/

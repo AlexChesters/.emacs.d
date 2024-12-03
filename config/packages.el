@@ -8,6 +8,9 @@
 (use-package all-the-icons
   :if (display-graphic-p))
 
+;; anaconda-mode
+(use-package anaconda-mode)
+
 ;; cfn-mode
 (use-package cfn-mode
   :config
@@ -18,9 +21,14 @@
   (add-to-list 'magic-mode-alist
 	       '("\\(.\\|\n\\)*;;; Commentary" . emacs-lisp-mode)))
 
-; company mode
+;; company mode
 (use-package company
   :hook (after-init . global-company-mode))
+
+;; company-anaconda
+(use-package company-anaconda
+  :config
+  (add-to-list 'company-backends 'company-anaconda))
 
 ;; copilot
 (use-package copilot
@@ -34,6 +42,7 @@
 
 ;; copilot-chat
 (use-package copilot-chat)
+
 ;; diff-hl
 (use-package diff-hl
   :config
@@ -78,7 +87,8 @@ See URL `http://pypi.python.org/pypi/ruff'."
               (unless (bound-and-true-p org-src-mode)
                 (when (buffer-file-name)
                   (setq-local flycheck-checkers '(python-ruff))
-                  (flycheck-mode))))))
+                  (flycheck-mode)
+                  (anaconda-mode))))))
 
 ;; helm
 (use-package helm)
