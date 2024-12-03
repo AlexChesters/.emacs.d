@@ -4,7 +4,8 @@
 
 ;;; Code:
 
-; https://robert.kra.hn/posts/2023-02-22-copilot-emacs-setup/#tab-key
+;; https://robert.kra.hn/posts/2023-02-22-copilot-emacs-setup/#tab-key
+(declare-function copilot-accept-completion "nil" ())
 (defun atc/copilot-complete-or-tab ()
     "Tab command that will complete with copilot if a completion is available, otherwise normal tab-indent."
   (interactive)
@@ -21,11 +22,13 @@
   (newline)
   (yank))
 
+(declare-function treemacs-display-current-project-exclusively "nil" ())
 (defun projectile-update-treemacs ()
   "Update treemacs upon projectile project change but without updating focus (https://github.com/Alexander-Miller/treemacs/issues/1072)."
   (save-selected-window
     (treemacs-display-current-project-exclusively)))
 
+(declare-function projectile-switch-project-by-name "nil" ("project-dir"))
 (defun atc/projectile-open-emacs-project ()
   "Open the Emacs project in projectile."
   (projectile-switch-project-by-name "~/.emacs.d"))
