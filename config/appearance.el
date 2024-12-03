@@ -14,7 +14,7 @@
 (global-display-line-numbers-mode)
 
 ;; theme
-(load-theme 'zenburn t)
+(load-theme 'material t)
 
 ;; rulers
 (add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
