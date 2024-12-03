@@ -13,8 +13,8 @@
       (indent-for-tab-command)))
 
 ; https://stackoverflow.com/a/551053
-(defun duplicate-line ()
-  "Duplicate the current line."
+(defun duplicate-line-below ()
+  "Duplicate the current line below."
   (interactive)
   (move-beginning-of-line 1)
   (kill-line)

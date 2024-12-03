@@ -15,7 +15,7 @@
 (define-key 'copilot-chat-kb-map (kbd "e") 'copilot-chat-explain) ; C-c c s - copilot-chat explain selected code
 
 ;; editing
-(global-set-key (kbd "M-<down>") 'duplicate-line) ; Alt+down - duplicate line
+(global-set-key (kbd "M-<down>") 'duplicate-line-below) ; Alt+down - duplicate line below
 (global-set-key (kbd "C-c s") 'scratch) ; C-c s - scratch buffer
 
 ;; magit
