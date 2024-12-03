@@ -1,4 +1,8 @@
-;;; misc.el - Miscellanous config
+;;; misc.el --- Miscellanous config
+
+;;; Commentary:
+
+;;; Code:
 
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/DEL-Does-Not-Delete.html
 (normal-erase-is-backspace-mode 1)
@@ -7,3 +11,10 @@
 
 ;; https://www.flycheck.org/en/latest/user/troubleshooting.html#flycheck-macos-exec-path-from-shell
 (exec-path-from-shell-initialize)
+
+;; spaces > tabs
+(setq-default indent-tabs-mode nil)
+
+(provide 'misc)
+
+;;; misc.el ends here

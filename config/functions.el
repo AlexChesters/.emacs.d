@@ -19,8 +19,7 @@
   (kill-line)
   (yank)
   (newline)
-  (yank)
-  )
+  (yank))
 
 (defun projectile-update-treemacs ()
   "Update treemacs upon projectile project change but without updating focus (https://github.com/Alexander-Miller/treemacs/issues/1072)."
