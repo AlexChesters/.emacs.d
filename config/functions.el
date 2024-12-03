@@ -1,4 +1,4 @@
-;;; functions.el - My custom functions
+;;; functions.el --- My custom functions
 
 ;;; Commentary:
 
@@ -7,7 +7,7 @@
 ;; https://robert.kra.hn/posts/2023-02-22-copilot-emacs-setup/#tab-key
 (declare-function copilot-accept-completion "nil" ())
 (defun atc/copilot-complete-or-tab ()
-    "Tab command that will complete with copilot if a completion is available, otherwise normal tab-indent."
+  "Tab command that will complete with copilot if a completion is available, otherwise normal tab-indent."
   (interactive)
   (or (copilot-accept-completion)
       (indent-for-tab-command)))
