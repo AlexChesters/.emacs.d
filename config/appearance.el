@@ -25,8 +25,15 @@
 (setq split-height-threshold nil)
 (setq split-width-threshold 0)
 
-;; tab line mode
+;; tab line mode stuff
+;; enable tab line mode
 (global-tab-line-mode)
+
+;; hide close button
+(setq tab-line-close-button-show nil)
+
+;; hide new button
+(setq tab-line-new-button-show nil)
 
 (provide 'appearance)
 
