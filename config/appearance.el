@@ -25,14 +25,8 @@
 (setq split-height-threshold nil)
 (setq split-width-threshold 0)
 
-;; tab bar mode
-(tab-bar-mode)
-
 ;; tab line mode
 (global-tab-line-mode)
-
-;; kill buffers on close
-(setq tab-line-close-tab-function 'kill-buffer)
 
 (provide 'appearance)
 
