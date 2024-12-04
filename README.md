@@ -18,7 +18,7 @@ custom keybindings
 miscellanous config that doesn't fit into any other file neatly
 
 #### [config/packages.el](./config/packages.el)
-configuration of third-party packages
+configuration of packages (third and first party)
 
 ### [elpa/](./elpa)
 Melpa packages

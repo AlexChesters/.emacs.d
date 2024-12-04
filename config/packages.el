@@ -106,6 +106,60 @@ See URL `http://pypi.python.org/pypi/ruff'."
 ;; swiper
 (use-package swiper)
 
+;; tab line mode
+;; function defined here rather than functions.el because that file is loaded after this one (because other functions
+;; depend on this file)
+;; https://www.reddit.com/r/emacs/comments/1c3oqqh/modern_tabs_in_emacs/
+;; https://gist.github.com/satran/95195fc86289dcf05cc8f66c363edb36
+(defun atc/set-tab-theme ()
+  (let ((bg (face-attribute 'mode-line :background))
+        (fg (face-attribute 'default :foreground))
+	(hg (face-attribute 'default :background))
+        (base (face-attribute 'mode-line :background))
+        (box-width (/ (line-pixel-height) 4)))
+    (set-face-attribute 'tab-line nil
+			:background base
+			:foreground fg
+			:height 0.8
+			:inherit nil
+			:box (list :line-width -1 :color base)
+			)
+    (set-face-attribute 'tab-line-tab nil
+			:foreground fg
+			:background bg
+			:weight 'normal
+			:inherit nil
+			:box (list :line-width box-width :color bg))
+    (set-face-attribute 'tab-line-tab-inactive nil
+			:foreground fg
+			:background base
+			:weight 'normal
+			:inherit nil
+			:box (list :line-width box-width :color base))
+    (set-face-attribute 'tab-line-highlight nil
+			:foreground fg
+			:background hg
+			:weight 'normal
+			:inherit nil
+			:box (list :line-width box-width :color hg))
+    (set-face-attribute 'tab-line-tab-current nil
+			:foreground fg
+			:background hg
+			:weight 'normal
+			:inherit nil
+			:box (list :line-width box-width :color hg))))
+
+(use-package tab-line
+  :after (doom-modeline)
+  :config
+  (global-tab-line-mode)
+  (setq tab-line-close-button-show nil)
+  (setq tab-line-new-button-show nil)
+  ;; TODO - figure out why this isn't working
+  ;; it looks like a package loading ordering issue, initially the tab bar loads in with incorrect styling
+  ;; then if you manually call (atc/set-tab-theme) the theme is applied correctly
+  (atc/set-tab-theme))
+
 ;; treemacs
 (use-package treemacs
   :config
