@@ -90,14 +90,6 @@ See URL `http://pypi.python.org/pypi/ruff'."
                   (flycheck-mode)
                   (anaconda-mode))))))
 
-;; helm
-(use-package helm)
-
-;; helm-projectile
-(use-package helm-projectile
-  :config
-  (helm-projectile-on))
-
 ;; projectile
 (use-package projectile
   :config
@@ -118,6 +110,11 @@ See URL `http://pypi.python.org/pypi/ruff'."
 (use-package treemacs-projectile
   :after (treemacs projectile)
   :ensure t)
+
+;; vertico
+(use-package vertico
+  :config
+  (vertico-mode))
 
 (provide 'packages)
 

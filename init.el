@@ -34,7 +34,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(dumb-jump company-anaconda anaconda-mode material-theme corfu scratch treemacs-projectile treemacs-all-the-icons treemacs copilot-chat helm-projectile helm doom-modeline all-the-icons diff-hl cfn-mode swiper f editorconfig s flycheck exec-path-from-shell projectile magit)))
+   '(vertico dumb-jump company-anaconda anaconda-mode material-theme corfu scratch treemacs-projectile treemacs-all-the-icons treemacs copilot-chat doom-modeline all-the-icons diff-hl cfn-mode swiper f editorconfig s flycheck exec-path-from-shell projectile magit)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
