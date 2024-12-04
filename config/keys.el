@@ -43,6 +43,7 @@
 (global-set-key (kbd "s-<right>") 'next-buffer) ; Cmd+right-arrow, moves to next buffer
 (global-set-key (kbd "s-<left>") 'previous-buffer) ; Cmd+left-arrow, moves to previous buffer
 (global-set-key (kbd "s-B") 'treemacs) ; Cmd+Shift+b - treemacs
+(global-set-key (kbd "M-.") 'dumb-jump-go) ; Alt+. - dumb jump go
 
 ;; searching
 (global-set-key (kbd "s-f") 'swiper) ; Cmd+f - swiper
