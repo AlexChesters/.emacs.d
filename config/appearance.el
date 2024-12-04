@@ -25,6 +25,8 @@
 (setq split-height-threshold nil)
 (setq split-width-threshold 0)
 
+;; tab bar mode
+(tab-bar-mode)
 ;; tab line mode
 (global-tab-line-mode)
 
