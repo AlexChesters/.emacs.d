@@ -90,6 +90,11 @@ See URL `http://pypi.python.org/pypi/ruff'."
                   (flycheck-mode)
                   (anaconda-mode))))))
 
+;; marginalia
+(use-package marginalia
+  :config
+  (marginalia-mode))
+
 ;; projectile
 (use-package projectile
   :config
