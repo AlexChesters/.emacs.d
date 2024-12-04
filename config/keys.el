@@ -4,6 +4,9 @@
 
 ;;; Code:
 
+;; buffer interaction
+(global-set-key (kbd "s-n") 'scratch-buffer) ; Cmd+n - switch to scratch
+
 ;; copilot
 (define-key copilot-mode-map (kbd "<tab>") 'atc/copilot-complete-or-tab) ; tab - custom copilot completion function
 

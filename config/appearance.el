@@ -25,6 +25,9 @@
 (setq split-height-threshold nil)
 (setq split-width-threshold 0)
 
+;; tab line mode
+(global-tab-line-mode)
+
 (provide 'appearance)
 
 ;;; appearance.el ends here
