@@ -30,8 +30,7 @@
 (define-key 'magit-kb-map (kbd "s") 'magit-status)
 
 ;; misc
-(global-set-key (kbd "s-w") 'kill-this-buffer) ; Cmd+w - close buffer and window
-(global-set-key (kbd "s-W") 'delete-window) ; Cmd+shift+w - close window
+(global-set-key (kbd "s-w") 'bury-buffer) ; Cmd+w - bury buffer
 (global-set-key (kbd "s-d") 'dired) ; Cmd+d - dired
 (global-set-key (kbd "s-<return>") 'eval-buffer) ; Cmd+return - eval buffer
 (global-set-key (kbd "s-b") 'ibuffer) ; Cmd+b - ibuffer
