@@ -20,6 +20,8 @@
 ;; editing
 (global-set-key (kbd "M-<up>") 'duplicate-line-above) ; Alt+up - duplicate line above
 (global-set-key (kbd "M-<down>") 'duplicate-line-below) ; Alt+down - duplicate line below
+(global-set-key (kbd "s-<up>") 'move-text-up) ; Cmd+up - move text up
+(global-set-key (kbd "s-<down>") 'move-text-down) ; Cmd+down - move text down
 (global-set-key (kbd "C-c s") 'scratch) ; C-c s - scratch buffer
 
 ;; magit
@@ -47,6 +49,7 @@
 (global-set-key (kbd "s-<left>") 'previous-buffer) ; Cmd+left-arrow, moves to previous buffer
 (global-set-key (kbd "s-B") 'treemacs) ; Cmd+Shift+b - treemacs
 (global-set-key (kbd "M-.") 'dumb-jump-go) ; Alt+. - dumb jump go
+(global-set-key (kbd "s-g") 'google-this) ; Cmd+g - google this
 
 ;; searching
 (global-set-key (kbd "s-f") 'swiper) ; Cmd+f - swiper

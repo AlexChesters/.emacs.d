@@ -24,3 +24,6 @@ elpy/
 
 # anaconda stores venvs in this folder
 anaconda-mode/
+
+# eww
+url/cache/

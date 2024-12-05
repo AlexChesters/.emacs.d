@@ -4,6 +4,14 @@
 
 ;;; Code:
 
+;; set font
+(set-frame-font "B612 Mono 16")
+
+;; visual line mode
+;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Visual-Line-Mode.html
+;; essentially, stops odd wrapping
+(visual-line-mode)
+
 ;; hide toolbar
 (tool-bar-mode -1)
 

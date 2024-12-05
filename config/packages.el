@@ -19,7 +19,7 @@
   ;; hack to stop this file from having cfn-mode enabled based on the
   ;; presence of the cfn-mode magic-mode-alist set up
   (add-to-list 'magic-mode-alist
-	       '("\\(.\\|\n\\)*;;; Commentary" . emacs-lisp-mode)))
+               '("\\(.\\|\n\\)*;;; Commentary" . emacs-lisp-mode)))
 
 ;; company mode
 (use-package company
@@ -90,10 +90,21 @@ See URL `http://pypi.python.org/pypi/ruff'."
                   (flycheck-mode)
                   (anaconda-mode))))))
 
+;; google this
+(use-package google-this)
+
+(use-package magit
+  :config
+  (add-hook 'magit-pre-refresh-hook 'diff-hl-magit-pre-refresh)
+  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
+
 ;; marginalia
 (use-package marginalia
   :config
   (marginalia-mode))
+
+;; move text
+(use-package move-text)
 
 ;; projectile
 (use-package projectile
@@ -123,40 +134,40 @@ See URL `http://pypi.python.org/pypi/ruff'."
   (interactive)
   (let ((bg (face-attribute 'mode-line :background))
         (fg (face-attribute 'default :foreground))
-	(hg (face-attribute 'default :background))
+        (hg (face-attribute 'default :background))
         (base (face-attribute 'mode-line :background))
         (box-width (/ (line-pixel-height) 4)))
     (set-face-attribute 'tab-line nil
-			:background base
-			:foreground fg
-			:height 0.8
-			:inherit nil
-			:box (list :line-width -1 :color base)
-			)
+                        :background base
+                        :foreground fg
+                        :height 0.8
+                        :inherit nil
+                        :box (list :line-width -1 :color base)
+                        )
     (set-face-attribute 'tab-line-tab nil
-			:foreground fg
-			:background bg
-			:weight 'normal
-			:inherit nil
-			:box (list :line-width box-width :color bg))
+                        :foreground fg
+                        :background bg
+                        :weight 'normal
+                        :inherit nil
+                        :box (list :line-width box-width :color bg))
     (set-face-attribute 'tab-line-tab-inactive nil
-			:foreground fg
-			:background base
-			:weight 'normal
-			:inherit nil
-			:box (list :line-width box-width :color base))
+                        :foreground fg
+                        :background base
+                        :weight 'normal
+                        :inherit nil
+                        :box (list :line-width box-width :color base))
     (set-face-attribute 'tab-line-highlight nil
-			:foreground fg
-			:background hg
-			:weight 'normal
-			:inherit nil
-			:box (list :line-width box-width :color hg))
+                        :foreground fg
+                        :background hg
+                        :weight 'normal
+                        :inherit nil
+                        :box (list :line-width box-width :color hg))
     (set-face-attribute 'tab-line-tab-current nil
-			:foreground fg
-			:background hg
-			:weight 'normal
-			:inherit nil
-			:box (list :line-width box-width :color hg))))
+                        :foreground fg
+                        :background hg
+                        :weight 'normal
+                        :inherit nil
+                        :box (list :line-width box-width :color hg))))
 
 (use-package tab-line
   :after (doom-modeline)

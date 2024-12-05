@@ -23,6 +23,12 @@
 ;; boot behaviour
 (add-hook 'after-init-hook 'atc/projectile-open-emacs-project)
 
+;; prevent the creation of backup files
+(setq make-backup-files nil)
+
+;; clean whitespace on every save
+(add-hook 'before-save-hook 'whitespace-cleanup)
+
 ;; melpa
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -34,7 +40,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(smartparens marginalia vertico dumb-jump company-anaconda anaconda-mode material-theme corfu scratch treemacs-projectile treemacs-all-the-icons treemacs copilot-chat doom-modeline all-the-icons diff-hl cfn-mode swiper f editorconfig s flycheck exec-path-from-shell projectile magit)))
+   '(move-text google-this smartparens marginalia vertico dumb-jump company-anaconda anaconda-mode material-theme corfu scratch treemacs-projectile treemacs-all-the-icons treemacs copilot-chat doom-modeline all-the-icons diff-hl cfn-mode swiper f editorconfig s flycheck exec-path-from-shell projectile magit)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

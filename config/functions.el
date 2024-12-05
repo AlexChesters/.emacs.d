@@ -44,6 +44,20 @@
   "Open the Emacs project in projectile."
   (projectile-switch-project-by-name "~/.emacs.d"))
 
+;; https://www.emacswiki.org/emacs/KillingBuffers#h5o-2
+(defun atc/kill-other-buffers ()
+  "Kill all other buffers."
+  (interactive)
+  (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
+
+;; https://www.emacswiki.org/emacs/KillingBuffers#h5o-5
+(defun atc/close-and-kill-this-pane ()
+  "If there are multiple windows, then close this pane and kill the buffer in it also."
+  (interactive)
+  (kill-this-buffer)
+  (if (not (one-window-p))
+      (delete-window)))
+
 (provide 'functions)
 
 ;;; functions.el ends here
