@@ -11,6 +11,9 @@
 ;; anaconda-mode
 (use-package anaconda-mode)
 
+;; auctex
+(use-package auctex)
+
 ;; cfn-mode
 (use-package cfn-mode
   :config
