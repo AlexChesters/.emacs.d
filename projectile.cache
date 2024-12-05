@@ -1,1 +1,0 @@
-#s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data ("/Users/chesta02/code/aws-accounts-management/" ("scripts/deploy-scp-or-rcp.sh") "/Users/chesta02/workspace/cloud-engineering-accounts-management/" ("data/accounts.json") "/Users/chesta02/workspace/org-audit/" ("scripts/waf_classic/list_waf_classic_resources.py" "scripts/waf_classic")))
