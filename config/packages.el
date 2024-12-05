@@ -112,6 +112,8 @@ See URL `http://pypi.python.org/pypi/ruff'."
 ;; https://www.reddit.com/r/emacs/comments/1c3oqqh/modern_tabs_in_emacs/
 ;; https://gist.github.com/satran/95195fc86289dcf05cc8f66c363edb36
 (defun atc/set-tab-theme ()
+  "Set the theme of tabs."
+  (interactive)
   (let ((bg (face-attribute 'mode-line :background))
         (fg (face-attribute 'default :foreground))
 	(hg (face-attribute 'default :background))
