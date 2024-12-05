@@ -103,6 +103,13 @@ See URL `http://pypi.python.org/pypi/ruff'."
   (add-hook 'projectile-after-switch-project-hook 'projectile-update-treemacs)
   (setq projectile-switch-project-action #'projectile-dired))
 
+;; smartparens
+(use-package smartparens
+  :hook (prog-mode text-mode markdown-mode) ;; add `smartparens-mode` to these hooks
+  :config
+  ;; load default config
+  (require 'smartparens-config))
+
 ;; swiper
 (use-package swiper)
 
