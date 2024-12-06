@@ -104,7 +104,8 @@ See URL `http://pypi.python.org/pypi/ruff'."
 (use-package magit
   :config
   (add-hook 'magit-pre-refresh-hook 'diff-hl-magit-pre-refresh)
-  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
+  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
+  (add-hook 'magit-post-refresh-hook 'treemacs-refresh))
 
 ;; marginalia
 (use-package marginalia
