@@ -58,6 +58,29 @@
   (if (not (one-window-p))
       (delete-window)))
 
+;; set up python stuff properly
+(defun atc/python-mode-setup ()
+  "Set up appropriate stuff in `python-mode'.
+Intended to be used as a hook when entering `python-mode'."
+  (interactive)
+  (when buffer-file-name
+    (let* ((venv-root (locate-dominating-file buffer-file-name ".venv")))
+      (if venv-root
+          (let ((venv-path (file-name-as-directory (file-name-concat venv-root ".venv"))))
+            (message "atc/python-mode-setup activating venv: %s" venv-path)
+            (pyvenv-activate venv-path)
+            (eglot-ensure))
+        (message "Error: Could not find a .venv directory for %s. Checking for venv directory." buffer-file-name)
+        (let* ((venv-root (locate-dominating-file buffer-file-name "venv")))
+          (if venv-root
+              (let ((venv-path (file-name-as-directory (file-name-concat venv-root "venv"))))
+                (message "atc/python-mode-setup activating venv: %s" venv-path)
+                (pyvenv-activate venv-path)
+                (eglot-ensure))
+            (message "Error: Could not find a venv directory for %s. Not activating venv." buffer-file-name)))
+        ))))
+(add-hook 'python-mode-hook 'atc/python-mode-setup)
+
 (provide 'functions)
 
 ;;; functions.el ends here
