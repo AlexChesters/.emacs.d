@@ -76,21 +76,11 @@ which now includes the virtual env
 2. If no .venv directory is found, it tries to find a venv directory.
 If one is found it does steps 1a, 1b, and 1c. as above."
   (interactive)
-  (when buffer-file-name
-    (let* ((venv-root (locate-dominating-file buffer-file-name ".venv")))
-      (if venv-root
-          (let ((venv-path (file-name-as-directory (file-name-concat venv-root ".venv"))))
-            (message "atc/python-mode-setup activating venv: %s" venv-path)
-            (pyvenv-activate venv-path)
-            (unless (executable-find "pylsp")
-              (message "pylsp not found in PATH. Installing python-lsp-server.")
-              (with-temp-buffer
-                (shell-command "pip install python-lsp-server" t)))
-            (eglot-ensure))
-        (message "Error: Could not find a .venv directory for %s. Checking for venv directory." buffer-file-name)
-        (let* ((venv-root (locate-dominating-file buffer-file-name "venv")))
+  (if (derived-mode-p 'python-mode)
+      (when buffer-file-name
+        (let* ((venv-root (locate-dominating-file buffer-file-name ".venv")))
           (if venv-root
-              (let ((venv-path (file-name-as-directory (file-name-concat venv-root "venv"))))
+              (let ((venv-path (file-name-as-directory (file-name-concat venv-root ".venv"))))
                 (message "atc/python-mode-setup activating venv: %s" venv-path)
                 (pyvenv-activate venv-path)
                 (unless (executable-find "pylsp")
@@ -98,8 +88,21 @@ If one is found it does steps 1a, 1b, and 1c. as above."
                   (with-temp-buffer
                     (shell-command "pip install python-lsp-server" t)))
                 (eglot-ensure))
-            (message "Error: Could not find a venv directory for %s. Not activating venv." buffer-file-name)))))))
+            (message "Error: Could not find a .venv directory for %s. Checking for venv directory." buffer-file-name)
+            (let* ((venv-root (locate-dominating-file buffer-file-name "venv")))
+              (if venv-root
+                  (let ((venv-path (file-name-as-directory (file-name-concat venv-root "venv"))))
+                    (message "atc/python-mode-setup activating venv: %s" venv-path)
+                    (pyvenv-activate venv-path)
+                    (unless (executable-find "pylsp")
+                      (message "pylsp not found in PATH. Installing python-lsp-server.")
+                      (with-temp-buffer
+                        (shell-command "pip install python-lsp-server" t)))
+                    (eglot-ensure))
+                (message "Error: Could not find a venv directory for %s. Not activating venv." buffer-file-name))))))))
 (add-hook 'python-mode-hook 'atc/python-mode-setup)
+;; this is needed for cases when you move from one python file to another file
+(add-hook 'find-file-hook 'atc/python-mode-setup)
 
 (provide 'functions)
 
