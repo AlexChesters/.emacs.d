@@ -86,9 +86,27 @@ See URL `http://pypi.python.org/pypi/ruff'."
             line-end))
   :modes python-mode)
 
+;; https://awk.space/blog/cfn-lint/
+ (flycheck-define-checker cfn-lint
+   "A Cloudformation linter using cfn-python-lint."
+   :command ("cfn-lint" "-f" "parseable" source)
+   :error-patterns
+   (
+    (warning line-start
+             (file-name) ":" line ":" column
+             ":" (one-or-more digit) ":" (one-or-more digit) ":"
+             (id "W" (one-or-more digit)) ":" (message) line-end)
+    (error line-start (file-name) ":" line ":" column
+           ":" (one-or-more digit) ":" (one-or-more digit) ":"
+           (id "E" (one-or-more digit)) ":" (message) line-end)
+    )
+   :modes (cfn-mode))
+
 (use-package flycheck
   :ensure t
-  :init (global-flycheck-mode))
+  :init (global-flycheck-mode)
+  :config
+  (add-to-list 'flycheck-checkers 'cfn-lint))
 
 (setq python-mode-hook
       (list (defun my-python-hook ()
