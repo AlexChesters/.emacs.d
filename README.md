@@ -8,6 +8,9 @@ custom configuration
 #### [config/appearance.el](./config/appearance.el)
 appearance related config, e.g. font sizes, theme
 
+#### [config/flycheck-checkers.el](./config/flycheck-checkers.el)
+custom flycheck checkers
+
 #### [config/functions.el](./config/functions.el)
 custom elisp functions
 

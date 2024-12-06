@@ -14,6 +14,7 @@
 (setq inhibit-startup-message t)
 
 ;; config files
+(load-file "~/.emacs.d/config/flycheck-checkers.el") ; Loading custom flycheck checkers
 (load-file "~/.emacs.d/config/packages.el") ; Loading custom package configuration
 (load-file "~/.emacs.d/config/functions.el") ; Loading custom functions
 (load-file "~/.emacs.d/config/keys.el") ; Loading key-bindings
