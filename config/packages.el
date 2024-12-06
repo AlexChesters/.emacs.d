@@ -104,8 +104,7 @@ See URL `http://pypi.python.org/pypi/ruff'."
 (use-package magit
   :config
   (add-hook 'magit-pre-refresh-hook 'diff-hl-magit-pre-refresh)
-  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
-  (add-hook 'magit-post-refresh-hook 'treemacs-refresh))
+  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
 
 ;; marginalia
 (use-package marginalia
@@ -193,6 +192,11 @@ See URL `http://pypi.python.org/pypi/ruff'."
 (use-package treemacs
   :config
   (setq treemacs-width 50))
+
+;; treemacs-magit
+(use-package treemacs-magit
+  :after (treemacs magit)
+  :ensure t)
 
 ;; treemacs-projectile
 (use-package treemacs-projectile
