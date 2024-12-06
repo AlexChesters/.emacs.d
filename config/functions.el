@@ -104,6 +104,14 @@ If one is found it does steps 1a, 1b, and 1c. as above."
 ;; this is needed for cases when you move from one python file to another file
 (add-hook 'find-file-hook 'atc/python-mode-setup)
 
+;; comment or uncomment a region if its active, otherwise the current line
+(defun atc/comment-uncomment-region-or-line ()
+  "Comment or uncomment highlighted region or line."
+  (interactive)
+  (if mark-active
+    (comment-or-uncomment-region (region-beginning) (region-end))
+    (comment-or-uncomment-region (line-beginning-position) (line-end-position))))
+
 (provide 'functions)
 
 ;;; functions.el ends here
