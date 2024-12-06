@@ -22,7 +22,7 @@
 (global-display-line-numbers-mode)
 
 ;; theme
-(load-theme 'material t)
+(load-theme 'zenburn t)
 
 ;; rulers
 (add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
