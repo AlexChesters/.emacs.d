@@ -61,7 +61,20 @@
 ;; set up python stuff properly
 (defun atc/python-mode-setup ()
   "Set up appropriate stuff in `python-mode'.
-Intended to be used as a hook when entering `python-mode'."
+Intended to be used as a hook when entering `python-mode'.
+
+Broadly speaking it
+
+1. Tries to find a .venv directory in the current project and activate it.
+
+If one is found:
+  a. It calls pyvenv-activate with it
+  b. It then checks to see if pylsp is found in the PATH,
+which now includes the virtual env
+  c. Finally, it calls `eglot-ensure' to start the language server
+
+2. If no .venv directory is found, it tries to find a venv directory.
+If one is found it does steps 1a, 1b, and 1c. as above."
   (interactive)
   (when buffer-file-name
     (let* ((venv-root (locate-dominating-file buffer-file-name ".venv")))
