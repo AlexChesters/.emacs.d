@@ -43,7 +43,8 @@
   ;; don't show in mode line
   :diminish
   :config
-  (add-hook 'prog-mode-hook 'copilot-mode)
+  ;; copilot mode is getting in the way of other completes so turning it off for now
+  ;;(add-hook 'prog-mode-hook 'copilot-mode)
   (add-to-list 'copilot-indentation-alist '(prog-mode 2))
   (add-to-list 'copilot-indentation-alist '(text-mode 2))
   (add-to-list 'copilot-indentation-alist '(emacs-lisp-mode 2)))
