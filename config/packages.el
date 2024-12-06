@@ -62,6 +62,12 @@
   (doom-modeline-mode 1)
   (setq doom-modeline-buffer-file-name-style 'truncate-nil))
 
+;; eglot
+(use-package eglot
+  :config
+  (add-to-list 'eglot-server-programs '(python-mode . ("pylsp")))
+  :hook (python-mode . eglot-ensure))
+
 ;; flycheck
 (use-package flycheck
   :ensure t
