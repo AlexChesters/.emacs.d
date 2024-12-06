@@ -23,6 +23,7 @@
 (global-set-key (kbd "s-<up>") 'move-text-up) ; Cmd+up - move text up
 (global-set-key (kbd "s-<down>") 'move-text-down) ; Cmd+down - move text down
 (global-set-key (kbd "C-c s") 'scratch) ; C-c s - scratch buffer
+(define-key python-mode-map (kbd "s-r") 'eglot-rename); Cmd+r - eglot rename (in python)
 
 ;; magit
 (define-prefix-command 'magit-kb-map)
