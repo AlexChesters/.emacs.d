@@ -65,7 +65,7 @@
 ;; eglot
 (use-package eglot
   :config
-  (add-to-list 'eglot-server-programs '(python-mode . ("pylsp")))
+  (add-to-list 'eglot-server-programs '(python-mode . ("pyls")))
   :hook (python-mode . eglot-ensure))
 
 ;; flycheck
