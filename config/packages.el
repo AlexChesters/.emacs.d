@@ -33,15 +33,20 @@
   :config
   (add-to-list 'company-backends 'company-anaconda))
 
+;; company-box
+(use-package company-box
+  :hook (company-mode . company-box-mode))
+
 ;; copilot
 (use-package copilot
   :load-path (lambda () (expand-file-name "packages/copilot.el" user-emacs-directory))
   ;; don't show in mode line
   :diminish
   :config
-  ; disable copilot mode for now
-  ;(add-hook 'prog-mode-hook 'copilot-mode)
-  )
+  (add-hook 'prog-mode-hook 'copilot-mode)
+  (add-to-list 'copilot-indentation-alist '(prog-mode . 2))
+  (add-to-list 'copilot-indentation-alist '(text-mode . 2))
+  (add-to-list 'copilot-indentation-alist '(emacs-lisp-mode . 2)))
 
 ;; copilot-chat
 (use-package copilot-chat)
