@@ -25,6 +25,7 @@
 (global-set-key (kbd "C-c s") 'scratch) ; C-c s - scratch buffer
 (define-key python-mode-map (kbd "s-r") 'eglot-rename); Cmd+r - eglot rename (in python)
 (global-set-key (kbd "s-/") 'atc/comment-uncomment-region-or-line) ; Cmd+/ - (un)comment region/line
+(global-set-key (kbd "<backspace>") 'atc/delete-region-or-backspace) ; backspace - custom backspace function
 
 ;; magit
 (define-prefix-command 'magit-kb-map)

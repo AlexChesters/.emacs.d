@@ -112,6 +112,14 @@ If one is found it does steps 1a, 1b, and 1c. as above."
     (comment-or-uncomment-region (region-beginning) (region-end))
     (comment-or-uncomment-region (line-beginning-position) (line-end-position))))
 
+;; delete a region if its active, otherwise normal backspace behaviour
+(defun atc/delete-region-or-backspace ()
+  "Delete a region if its active, otherwise normal backspace behaviour."
+  (interactive)
+  (if mark-active
+      (kill-region (region-beginning) (region-end))
+    (delete-char -1)))
+
 (provide 'functions)
 
 ;;; functions.el ends here
