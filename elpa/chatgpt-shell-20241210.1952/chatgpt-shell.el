@@ -4,8 +4,8 @@
 
 ;; Author: Alvaro Ramirez https://xenodium.com
 ;; URL: https://github.com/xenodium/chatgpt-shell
-;; Package-Version: 20241208.1836
-;; Package-Revision: 2b6fe835a911
+;; Package-Version: 20241210.1952
+;; Package-Revision: 2c09f90ceb5b
 ;; Package-Requires: ((emacs "28.1") (shell-maker "0.74.1"))
 (defconst chatgpt-shell--version "2.8.4")
 
@@ -494,7 +494,7 @@ Downloaded from https://github.com/f/awesome-chatgpt-prompts."
                                        (map-elt model :provider)
                                        (map-elt model :version)))
                              chatgpt-shell-models))
-            (selection (nth 1 (string-split (completing-read "Model version: "
+            (selection (nth 1 (split-string (completing-read "Model version: "
                                                              models nil t)))))
       (progn
         (when (derived-mode-p 'chatgpt-shell-mode)

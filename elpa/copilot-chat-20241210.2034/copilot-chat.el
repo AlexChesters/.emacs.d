@@ -3,8 +3,8 @@
 ;; Copyright (C) 2024  copilot-chat maintainers
 
 ;; Author: cedric.chepied <cedric.chepied@gmail.com>
-;; Package-Version: 20241208.1307
-;; Package-Revision: da233facdc5a
+;; Package-Version: 20241210.2034
+;; Package-Revision: 8f0dcb8d21ff
 ;; URL: https://github.com/chep/copilot-chat.el
 ;; Package-Requires: ((request "0.3.2") (markdown-mode "2.6") (emacs "27.1") (chatgpt-shell "1.6.1") (magit "4.0.0"))
 ;; Keywords: convenience, tools
@@ -46,8 +46,8 @@
 ;; customs
 (defcustom copilot-chat-frontend 'markdown
   "Frontend to use with `copilot-chat'.  Can be markdown, org or shell-makerauieuie."
-  :type '(choice (const :tag "markdown" markdown)
-                 (const :tag "org-mode" org)
+  :type '(choice (const :tag "org-mode" org)
+                 (const :tag "markdown" markdown)
                  (const :tag "shell-maker" shell-maker))
   :group 'copilot-chat)
 
