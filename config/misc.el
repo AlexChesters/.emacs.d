@@ -18,6 +18,9 @@
 ;; it's not the 70s anymore, we don't need two spaces after a period
 (setq sentence-end-double-space nil)
 
+;; case-insensitive completion
+(setq completion-ignore-case t)
+
 (provide 'misc)
 
 ;;; misc.el ends here
