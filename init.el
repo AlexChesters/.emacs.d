@@ -2,7 +2,13 @@
 
 ;;; Commentary:
 
+;; various start up steps in here are from https://blog.d46.us/advanced-emacs-startup/
+
 ;;; Code:
+
+;; Make startup faster by reducing the frequency of garbage
+;; collection.  The default is 800 kilobytes.  Measured in bytes.
+(setq gc-cons-threshold (* 50 1000 1000))
 
 ;; use-package
 (eval-when-compile
@@ -34,6 +40,9 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
+
+;; Make gc pauses faster by decreasing the threshold.
+(setq gc-cons-threshold (* 2 1000 1000))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
