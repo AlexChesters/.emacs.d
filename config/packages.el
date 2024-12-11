@@ -192,7 +192,8 @@
 ;; vertico
 (use-package vertico
   :config
-  (vertico-mode))
+  (vertico-mode)
+  (setq completion-ignore-case t))
 
 (provide 'packages)
 
