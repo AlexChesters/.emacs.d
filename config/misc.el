@@ -21,6 +21,9 @@
 ;; case-insensitive completion
 (setq completion-ignore-case t)
 
+;; elisp indent of 2
+(setq lisp-indent-offset 2)
+
 (provide 'misc)
 
 ;;; misc.el ends here

@@ -7,9 +7,6 @@
 ;; buffer interaction
 (global-set-key (kbd "s-n") 'scratch-buffer) ; Cmd+n - switch to scratch
 
-;; copilot
-(define-key copilot-mode-map (kbd "<tab>") 'atc/copilot-complete-or-tab) ; tab - custom copilot completion function
-
 ;; copilot-chat
 (define-prefix-command 'copilot-chat-kb-map)
 (global-set-key (kbd "C-c c") 'copilot-chat-kb-map)
@@ -23,7 +20,6 @@
 (global-set-key (kbd "s-<up>") 'move-text-up) ; Cmd+up - move text up
 (global-set-key (kbd "s-<down>") 'move-text-down) ; Cmd+down - move text down
 (global-set-key (kbd "C-c s") 'scratch) ; C-c s - scratch buffer
-(define-key python-mode-map (kbd "s-r") 'eglot-rename); Cmd+r - eglot rename (in python)
 (global-set-key (kbd "s-/") 'atc/comment-uncomment-region-or-line) ; Cmd+/ - (un)comment region/line
 (global-set-key (kbd "<backspace>") 'atc/delete-region-or-backspace) ; backspace - custom backspace function
 

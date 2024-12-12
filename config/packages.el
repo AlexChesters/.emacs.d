@@ -9,13 +9,16 @@
   :if (display-graphic-p))
 
 ;; anaconda-mode
-(use-package anaconda-mode)
+(use-package anaconda-mode
+  :defer t)
 
 ;; auctex
-(use-package auctex)
+(use-package auctex
+  :defer t)
 
 ;; cfn-mode
 (use-package cfn-mode
+  :defer t
   :config
   (add-to-list 'magic-mode-alist
     '("\\(.\\|\n\\)*Type: AWS::" . cfn-mode))
@@ -26,19 +29,23 @@
 
 ;; company mode
 (use-package company
+  :defer t
   :hook (after-init . global-company-mode))
 
 ;; company-anaconda
 (use-package company-anaconda
+  :defer t
   :config
   (add-to-list 'company-backends 'company-anaconda))
 
 ;; company-box
 (use-package company-box
+  :defer t
   :hook (company-mode . company-box-mode))
 
 ;; copilot
 (use-package copilot
+  :defer t
   :load-path (lambda () (expand-file-name "packages/copilot.el" user-emacs-directory))
   ;; don't show in mode line
   :diminish
@@ -47,32 +54,42 @@
   ;;(add-hook 'prog-mode-hook 'copilot-mode)
   (add-to-list 'copilot-indentation-alist '(prog-mode 2))
   (add-to-list 'copilot-indentation-alist '(text-mode 2))
-  (add-to-list 'copilot-indentation-alist '(emacs-lisp-mode 2)))
+  (add-to-list 'copilot-indentation-alist '(emacs-lisp-mode 2))
+  :bind
+  (:map copilot-mode-map
+        ("<tab>" . atc/copilot-complete-or-tab)))
 
 ;; copilot-chat
-(use-package copilot-chat)
+(use-package copilot-chat
+  :defer t)
 
 ;; diff-hl
 (use-package diff-hl
-  :config
-  (global-diff-hl-mode))
+  :defer t
+  :hook
+  (prog-mode . diff-hl-mode)
+  (magit-mode . diff-hl-mode))
 
 ;; doom-modeline
 (use-package doom-modeline
-  :config
-  (doom-modeline-mode 1)
+  :defer t
+  :init (doom-modeline-mode 1)
   (setq doom-modeline-buffer-file-name-style 'truncate-nil))
 
 ;; eglot
 (use-package eglot
+  :defer
   :config
   (add-to-list 'eglot-server-programs '(python-mode . ("pylsp")))
-  :hook (python-mode . eglot-ensure))
+  :hook (python-mode . eglot-ensure)
+  :bind (:map python-mode-map
+              ("s-r" . eglot-rename)))
 
 ;; flycheck
 (use-package flycheck
-  :ensure t
-  :init (global-flycheck-mode)
+  :defer
+  :hook
+  (prog-mode . flycheck-mode)
   :config
   (add-to-list 'flycheck-checkers 'cfn-lint))
 
@@ -85,38 +102,44 @@
                   (anaconda-mode))))))
 
 ;; google this
-(use-package google-this)
+(use-package google-this
+  :defer t)
 
 (use-package magit
+  :defer t
   :config
   (add-hook 'magit-pre-refresh-hook 'diff-hl-magit-pre-refresh)
   (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
 
 ;; marginalia
 (use-package marginalia
+  :after (vertico)
   :config
   (marginalia-mode))
 
 ;; move text
-(use-package move-text)
+(use-package move-text
+  :defer t)
 
 ;; projectile
 (use-package projectile
+  :init (projectile-mode +1)
   :config
-  (projectile-mode +1)
   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
   (add-hook 'projectile-after-switch-project-hook 'projectile-update-treemacs)
   (setq projectile-switch-project-action #'projectile-dired))
 
 ;; smartparens
 (use-package smartparens
+  :defer t
   :hook (prog-mode text-mode markdown-mode) ;; add `smartparens-mode` to these hooks
   :config
   ;; load default config
   (require 'smartparens-config))
 
 ;; swiper
-(use-package swiper)
+(use-package swiper
+  :defer t)
 
 ;; tab line mode
 ;; function defined here rather than functions.el because that file is loaded after this one (because other functions
