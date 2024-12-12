@@ -101,6 +101,10 @@
                   (flycheck-mode)
                   (anaconda-mode))))))
 
+;; github-pull-requests
+(use-package github-pull-requests
+  :load-path "~/code/github-pull-requests.el/lisp")
+
 ;; google this
 (use-package google-this
   :defer t)
