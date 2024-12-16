@@ -109,6 +109,12 @@
 (use-package google-this
   :defer t)
 
+;; ibuffer
+(use-package ibuffer
+  :config
+  ;; don't prompt for confirmation dialogs
+  (setq ibuffer-expert t))
+
 (use-package magit
   :defer t
   :config
