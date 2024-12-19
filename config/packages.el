@@ -225,7 +225,9 @@
 ;; web mode
 (use-package web-mode
   :mode
-  (("\\.html\\'" . web-mode)))
+  (("\\.html\\'" . web-mode))
+  :config
+  (setq web-mode-markup-indent-offset 2))
 
 ;; vertico
 (use-package vertico
