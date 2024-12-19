@@ -131,6 +131,13 @@
 (use-package move-text
   :defer t)
 
+;; perspective
+(use-package perspective
+  :custom
+  (persp-mode-prefix-key (kbd "C-x x"))
+  :init
+  (persp-mode))
+
 ;; projectile
 (use-package projectile
   :init (projectile-mode +1)
