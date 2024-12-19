@@ -143,7 +143,6 @@
   :init (projectile-mode +1)
   :config
   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
-  (add-hook 'projectile-after-switch-project-hook 'projectile-update-treemacs)
   (setq projectile-switch-project-action #'projectile-dired))
 
 ;; smartparens
@@ -213,21 +212,6 @@
   ;; it looks like a package loading ordering issue, initially the tab bar loads in with incorrect styling
   ;; then if you manually call (atc/set-tab-theme) the theme is applied correctly
   (atc/set-tab-theme))
-
-;; treemacs
-(use-package treemacs
-  :config
-  (setq treemacs-width 50))
-
-;; treemacs-magit
-(use-package treemacs-magit
-  :after (treemacs magit)
-  :ensure t)
-
-;; treemacs-projectile
-(use-package treemacs-projectile
-  :after (treemacs projectile)
-  :ensure t)
 
 ;; web mode
 (use-package web-mode
