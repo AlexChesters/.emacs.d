@@ -222,6 +222,11 @@
   :after (treemacs projectile)
   :ensure t)
 
+;; web mode
+(use-package web-mode
+  :mode
+  (("\\.html\\'" . web-mode)))
+
 ;; vertico
 (use-package vertico
   :config
