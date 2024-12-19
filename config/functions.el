@@ -103,6 +103,8 @@ If one is found it does steps 1a, 1b, and 1c. as above."
 (add-hook 'python-mode-hook 'atc/python-mode-setup)
 ;; this is needed for cases when you move from one python file to another file
 (add-hook 'find-file-hook 'atc/python-mode-setup)
+;; this is needed for cases when you move between already open python files
+(add-hook 'buffer-list-update-hook 'atc/python-mode-setup)
 
 ;; comment or uncomment a region if its active, otherwise the current line
 (defun atc/comment-uncomment-region-or-line ()
