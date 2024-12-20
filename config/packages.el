@@ -135,10 +135,14 @@
 
 ;; perspective
 (use-package perspective
+  :init
+  (persp-mode)
   :custom
   (persp-mode-prefix-key (kbd "C-x x"))
-  :init
-  (persp-mode))
+  (persp-state-default-file (expand-file-name ".perspective" user-emacs-directory))
+  :hook
+  (after-init . (lambda () (persp-state-load persp-state-default-file)))
+  (kill-emacs . persp-state-save))
 
 ;; projectile
 (use-package projectile
