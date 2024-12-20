@@ -134,7 +134,9 @@ If one is found it does steps 1a, 1b, and 1c. as above."
     (progn
       (if (buffer-file-name)
         (neotree-dir (file-name-directory (buffer-file-name)))
-        (neotree-dir dired-directory)))))
+        (if dired-directory
+          (neotree-dir dired-directory)
+          (neotree-dir "~/"))))))
 
 ;; custom function to switch project, integrating projectile and perspective
 ;; (defvar atc-projects '(foo bar))
