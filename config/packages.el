@@ -131,7 +131,9 @@
 (use-package move-text
   :defer t)
 
-(use-package neotree)
+(use-package neotree
+  :config
+  (setq neo-show-hidden-files t))
 
 ;; perspective
 (use-package perspective
@@ -150,7 +152,7 @@
   :init (projectile-mode +1)
   :config
   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
-  (setq projectile-switch-project-action #'projectile-dired))
+  (setq projectile-switch-project-action (lambda () (persp-ibuffer nil))))
 
 ;; smartparens
 (use-package smartparens
