@@ -142,7 +142,8 @@
   (persp-state-default-file (expand-file-name ".perspective" user-emacs-directory))
   :hook
   (after-init . (lambda () (persp-state-load persp-state-default-file)))
-  (kill-emacs . persp-state-save))
+  (kill-emacs . persp-state-save)
+  (persp-switch . atc/neotree-toggle))
 
 ;; projectile
 (use-package projectile
