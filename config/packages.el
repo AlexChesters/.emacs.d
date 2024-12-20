@@ -135,24 +135,12 @@
   :config
   (setq neo-show-hidden-files t))
 
-;; perspective
-(use-package perspective
-  :init
-  (persp-mode)
-  :custom
-  (persp-mode-prefix-key (kbd "C-x x"))
-  (persp-state-default-file (expand-file-name ".perspective" user-emacs-directory))
-  :hook
-  (after-init . (lambda () (persp-state-load persp-state-default-file)))
-  (kill-emacs . persp-state-save)
-  (persp-switch . atc/neotree-toggle))
-
 ;; projectile
 (use-package projectile
   :init (projectile-mode +1)
   :config
   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
-  (setq projectile-switch-project-action (lambda () (persp-ibuffer nil))))
+  (setq projectile-switch-project-action #'projectile-dired))
 
 ;; smartparens
 (use-package smartparens
