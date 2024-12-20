@@ -129,8 +129,12 @@ If one is found it does steps 1a, 1b, and 1c. as above."
   "Custom neotree toggle function that ensures it opens at the right location."
   (interactive)
   (if (neo-global--window-exists-p)
-    (neotree-hide)
-    (neotree-dir (file-name-directory (buffer-file-name)))))
+    (progn
+      (neotree-hide))
+    (progn
+      (if (buffer-file-name)
+        (neotree-dir (file-name-directory (buffer-file-name)))
+        (neotree-dir dired-directory)))))
 
 ;; custom function to switch project, integrating projectile and perspective
 ;; (defvar atc-projects '(foo bar))

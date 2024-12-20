@@ -131,6 +131,8 @@
 (use-package move-text
   :defer t)
 
+(use-package neotree)
+
 ;; perspective
 (use-package perspective
   :custom
