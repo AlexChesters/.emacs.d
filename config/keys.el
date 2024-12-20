@@ -45,7 +45,7 @@
 (global-set-key (kbd "M-s-<down>") 'windmove-down) ; Cmd+alt+down, Move down buffer
 (global-set-key (kbd "s-<right>") 'next-buffer) ; Cmd+right-arrow, moves to next buffer
 (global-set-key (kbd "s-<left>") 'previous-buffer) ; Cmd+left-arrow, moves to previous buffer
-(global-set-key (kbd "s-B") 'neotree-toggle) ; Cmd+Shift+b - neotree
+(global-set-key (kbd "s-B") 'atc/neotree-toggle) ; Cmd+Shift+b - neotree
 (global-set-key (kbd "M-.") 'dumb-jump-go) ; Alt+. - dumb jump go
 (global-set-key (kbd "s-g") 'google-this) ; Cmd+g - google this
 

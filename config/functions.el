@@ -122,6 +122,23 @@ If one is found it does steps 1a, 1b, and 1c. as above."
       (kill-region (region-beginning) (region-end))
     (delete-char -1)))
 
+;; custom neotree function
+;; https://www.reddit.com/r/emacs/comments/i4oxdx/neotree_show_file_tree_for_current_buffer/
+(declare-function neo-global--window-exists-p nil)
+(defun atc/neotree-toggle ()
+  "Custom neotree toggle function that ensures it opens at the right location."
+  (interactive)
+  (if (neo-global--window-exists-p)
+    (neotree-hide)
+    (neotree-dir (file-name-directory (buffer-file-name)))))
+
+;; custom function to switch project, integrating projectile and perspective
+;; (defvar atc-projects '(foo bar))
+;; (defun atc/switch-project ()
+;;   "Switch project currently being worked on."
+;;   (interactive)
+;;   (dol))
+
 (provide 'functions)
 
 ;;; functions.el ends here
