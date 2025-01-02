@@ -121,6 +121,12 @@
   ;; don't prompt for confirmation dialogs
   (setq ibuffer-expert t))
 
+;; js mode
+(use-package js-mode
+  :defer t
+  :custom
+  (js-indent-level 2))
+
 (use-package magit
   :defer t
   :config
