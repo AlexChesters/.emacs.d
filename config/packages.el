@@ -63,6 +63,12 @@
 (use-package copilot-chat
   :defer t)
 
+;; css mode
+(use-package css-mode
+  :defer t
+  :custom
+  (css-indent-offset 2))
+
 ;; diff-hl
 (use-package diff-hl
   :defer t
