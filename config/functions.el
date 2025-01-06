@@ -145,6 +145,15 @@ If one is found it does steps 1a, 1b, and 1c. as above."
 ;;   (interactive)
 ;;   (dol))
 
+;; https://coderwall.com/p/2vnxaw/beautify-json-in-emacs
+(defun atc/format-json ()
+  "Format a buffer containing JSON."
+  (interactive)
+  (let ((b (if mark-active (min (point) (mark)) (point-min)))
+        (e (if mark-active (max (point) (mark)) (point-max))))
+    (shell-command-on-region b e
+      "python -m json.tool" (current-buffer) t)))
+
 (provide 'functions)
 
 ;;; functions.el ends here
