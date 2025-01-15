@@ -138,6 +138,11 @@ If one is found it does steps 1a, 1b, and 1c. as above."
           (neotree-dir dired-directory)
           (neotree-dir "~/"))))))
 
+(declare-function projectile-project-root nil)
+(defun atc/neotree-after-projectile ()
+  "Update neotree dir after a projectile switch. Designed to be ran as a hook."
+  (neotree-dir (projectile-project-root)))
+
 ;; custom function to switch project, integrating projectile and perspective
 ;; (defvar atc-projects '(foo bar))
 ;; (defun atc/switch-project ()
