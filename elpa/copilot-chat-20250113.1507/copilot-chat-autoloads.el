@@ -70,12 +70,12 @@ Set the Copilot Chat model to MODEL.
 
 ;;; Generated autoloads from copilot-chat-markdown.el
 
-(register-definition-prefixes "copilot-chat-markdown" '("copilot-chat--markdown-format-data"))
+(register-definition-prefixes "copilot-chat-markdown" '("copilot-chat--"))
 
 
 ;;; Generated autoloads from copilot-chat-org.el
 
-(register-definition-prefixes "copilot-chat-org" '("copilot-chat--"))
+(register-definition-prefixes "copilot-chat-org" '("copilot-chat-"))
 
 
 ;;; Generated autoloads from copilot-chat-request.el

@@ -4,10 +4,10 @@
 
 ;; Author: Alvaro Ramirez https://xenodium.com
 ;; URL: https://github.com/xenodium/chatgpt-shell
-;; Package-Version: 20250105.1728
-;; Package-Revision: 6d2379d5b28b
+;; Package-Version: 20250115.1025
+;; Package-Revision: 99db92a3ba19
 ;; Package-Requires: ((emacs "28.1") (shell-maker "0.76.2"))
-(defconst chatgpt-shell--version "2.11.6")
+(defconst chatgpt-shell--version "2.12.1")
 
 ;; This package is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -1303,7 +1303,10 @@ Could be a prompt or a source block."
 (defun chatgpt-shell--minibuffer-prompt ()
   "Construct a prompt for the minibuffer."
   (if (chatgpt-shell--primary-buffer)
-      (concat (buffer-name (chatgpt-shell--primary-buffer)) "> ")
+      (concat (string-trim
+               (replace-regexp-in-string
+                "\\*" ""
+                (buffer-name (chatgpt-shell--primary-buffer)))) "> ")
     (shell-maker-prompt
      chatgpt-shell--config)))
 

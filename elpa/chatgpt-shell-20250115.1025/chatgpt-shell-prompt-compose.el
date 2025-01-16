@@ -455,7 +455,9 @@ If BACKWARDS is non-nil, go to previous interaction."
 
 (defun chatgpt-shell-prompt-compose-buffer-name ()
   "Generate compose buffer name."
-  (concat (chatgpt-shell--minibuffer-prompt) "compose"))
+  (concat "*"
+          (chatgpt-shell--minibuffer-prompt) "compose"
+          "*"))
 
 (defun chatgpt-shell-prompt-compose-swap-system-prompt ()
   "Swap the compose buffer's system prompt."
@@ -533,39 +535,70 @@ Useful if sending a request failed, perhaps from failed connectivity."
           (set-window-configuration window-config))))))
 
 (defun chatgpt-shell-prompt-compose-next-item ()
-  "Jump to and select next item (block, link, interaction)."
+  "Jump to and select next item (request, response, block, link, interaction)."
   (interactive)
   (unless (derived-mode-p 'chatgpt-shell-prompt-compose-mode)
     (user-error "Not in a shell compose buffer"))
-  (let* ((next-block (save-excursion
+  (let* ((request (save-excursion
+                    (when (get-text-property (point) 'ignore)
+                      (text-property-search-forward 'request t)
+                      (point))))
+         (response (save-excursion
+                     (when (get-text-property (point) 'request)
+                       (text-property-search-forward 'request nil)
+                       (point))))
+         (next-block (save-excursion
                        (call-interactively #'chatgpt-shell-next-source-block)))
          (next-link (save-excursion
                       (call-interactively #'chatgpt-shell-next-link)))
          (positions (delq nil (list next-block
-                                    next-link)))
+                                    next-link
+                                    response
+                                    request)))
          (next-pos (when positions
                      (apply 'min positions))))
     (cond ((not next-pos)
            (chatgpt-shell-prompt-compose-next-interaction))
+          ((eq next-pos request)
+           (deactivate-mark)
+           (goto-char next-pos))
           ((eq next-pos next-block)
            (deactivate-mark)
            (goto-char next-block)
            (call-interactively #'chatgpt-shell-mark-block))
+          ((eq next-pos response)
+           (deactivate-mark)
+           (goto-char next-pos))
           ((eq next-pos next-link)
            (deactivate-mark)
            (goto-char next-link)))))
 
 (defun chatgpt-shell-prompt-compose-previous-item ()
-  "Jump to and select previous item (block, link, interaction)."
+  "Jump to and select previous item (request, response, block, link, interaction)."
   (interactive)
   (unless (derived-mode-p 'chatgpt-shell-prompt-compose-mode)
     (user-error "Not in a shell compose buffer"))
-  (let* ((previous-block (save-excursion
+  (let* ((location (point))
+         (response (save-excursion
+                     (when (and (not (get-text-property (point) 'ignore))
+                                (not (get-text-property (point) 'request)))
+                       (text-property-search-backward 'request nil)
+                       (text-property-search-forward 'request nil)
+                       (unless (eq location (point))
+                         (point)))))
+         (request (unless response
+                    (save-excursion
+                      (goto-char (point-min))
+                      (text-property-search-forward 'prompt t)
+                      (point))))
+         (previous-block (save-excursion
                            (call-interactively #'chatgpt-shell-previous-source-block)))
          (previous-link (save-excursion
                           (call-interactively #'chatgpt-shell-previous-link)))
          (positions (delq nil (list previous-block
-                                    previous-link)))
+                                    previous-link
+                                    response
+                                    request)))
          (previous-pos (when positions
                          (apply 'max positions))))
     (cond ((eq (point) (save-excursion
@@ -574,6 +607,9 @@ Useful if sending a request failed, perhaps from failed connectivity."
                          (point)))
            (deactivate-mark)
            (chatgpt-shell-prompt-compose-previous-interaction))
+          ((eq previous-pos request)
+           (deactivate-mark)
+           (goto-char request))
           ((not previous-pos)
            (deactivate-mark)
            (goto-char (point-min))
@@ -582,6 +618,9 @@ Useful if sending a request failed, perhaps from failed connectivity."
            (deactivate-mark)
            (goto-char previous-block)
            (call-interactively #'chatgpt-shell-mark-block))
+          ((eq previous-pos response)
+           (deactivate-mark)
+           (goto-char previous-pos))
           ((eq previous-pos previous-link)
            (deactivate-mark)
            (goto-char previous-link)))))

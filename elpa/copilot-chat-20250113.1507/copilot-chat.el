@@ -3,8 +3,8 @@
 ;; Copyright (C) 2024  copilot-chat maintainers
 
 ;; Author: cedric.chepied <cedric.chepied@gmail.com>
-;; Package-Version: 20250110.2247
-;; Package-Revision: 51f63723205d
+;; Package-Version: 20250113.1507
+;; Package-Revision: 918b8d8195f0
 ;; URL: https://github.com/chep/copilot-chat.el
 ;; Package-Requires: ((request "0.3.2") (markdown-mode "2.6") (emacs "27.1") (chatgpt-shell "1.6.1") (magit "4.0.0"))
 ;; Keywords: convenience, tools
