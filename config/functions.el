@@ -159,6 +159,12 @@ If one is found it does steps 1a, 1b, and 1c. as above."
     (shell-command-on-region b e
       "python -m json.tool" (current-buffer) t)))
 
+(defun atc/ibuffer ()
+  "Custom ibuffer function that prevents a split."
+  (interactive)
+  (let ((display-buffer-overriding-action '(display-buffer-same-window)))
+    (ibuffer)))
+
 (provide 'functions)
 
 ;;; functions.el ends here

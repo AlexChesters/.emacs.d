@@ -32,7 +32,7 @@
 (global-set-key (kbd "s-w") 'kill-buffer-and-window) ; Cmd+w - kill buffer and its window
 (global-set-key (kbd "s-d") 'dired) ; Cmd+d - dired
 (global-set-key (kbd "s-<return>") 'eval-buffer) ; Cmd+return - eval buffer
-(global-set-key (kbd "s-b") 'ibuffer) ; Cmd+b - ibuffer
+(global-set-key (kbd "s-b") 'atc/ibuffer) ; Cmd+b - ibuffer
 (global-set-key (kbd "s-o") 'find-file) ; Cmd+o - find file
 (global-set-key (kbd "s-k") 'kill-whole-line) ; Cmd+k - kill whole line
 (global-set-key (kbd "s-S-<return>") 'restart-emacs) ; Cmd+Shift+return - restart emacs
