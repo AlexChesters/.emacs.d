@@ -33,6 +33,11 @@
 (setq split-height-threshold nil)
 (setq split-width-threshold 0)
 
+;; force ibuffer to open in the same window
+(add-to-list 'display-buffer-alist
+  '("^\\*Ibuffer\\*$" . (display-buffer-same-window)))
+
+
 (provide 'appearance)
 
 ;;; appearance.el ends here

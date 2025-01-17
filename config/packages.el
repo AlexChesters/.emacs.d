@@ -153,7 +153,7 @@
   :init (projectile-mode +1)
   :config
   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
-  (setq projectile-switch-project-action #'projectile-dired)
+  (setq projectile-switch-project-action #'magit-status)
   (add-hook 'projectile-after-switch-project-hook #'atc/neotree-after-projectile))
 
 ;; smartparens
