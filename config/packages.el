@@ -127,6 +127,11 @@
   :custom
   (js-indent-level 2))
 
+;; livedown
+(use-package livedown
+  :load-path (lambda () (expand-file-name "packages/emacs-livedown" user-emacs-directory)))
+
+;; magit
 (use-package magit
   :defer t
   :config

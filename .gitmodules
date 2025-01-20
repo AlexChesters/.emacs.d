@@ -1,3 +1,6 @@
 [submodule "packages/copilot.el"]
 	path = packages/copilot.el
 	url = https://github.com/zerolfx/copilot.el
+[submodule "packages/emacs-livedown"]
+	path = packages/emacs-livedown
+	url = https://github.com/shime/emacs-livedown.git
