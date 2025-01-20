@@ -1,5 +1,10 @@
 # .emacs.d
 
+## scripts
+
+### [scripts/init.sh](./scripts/init.sh)
+installs any miscellanous dependencies (e.g. npm packages)
+
 ## directories
 
 ### [config/](./config)
