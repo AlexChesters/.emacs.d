@@ -3,8 +3,8 @@
 ;; Copyright (C) 2024  copilot-chat maintainers
 
 ;; Author: cedric.chepied <cedric.chepied@gmail.com>
-;; Package-Version: 20250113.1507
-;; Package-Revision: 918b8d8195f0
+;; Package-Version: 20250122.1219
+;; Package-Revision: 669465191927
 ;; URL: https://github.com/chep/copilot-chat.el
 ;; Package-Requires: ((request "0.3.2") (markdown-mode "2.6") (emacs "27.1") (chatgpt-shell "1.6.1") (magit "4.0.0"))
 ;; Keywords: convenience, tools
@@ -664,6 +664,33 @@ This function should be overridden by frontends."
   (setq copilot-chat-model model)
   (customize-save-variable 'copilot-chat-model copilot-chat-model)
   (message "Copilot Chat model set to %s" copilot-chat-model))
+
+
+(defun copilot-chat-yank()
+  "Insert last code block given by copilot-chat."
+  (interactive)
+  (setq copilot-chat--yank-index 1
+		copilot-chat--last-yank-start nil
+		copilot-chat--last-yank-end nil)
+  (copilot-chat--yank))
+
+(defun copilot-chat-yank-pop(&optional inc)
+  "Replace just-yanked code block with a different block.
+INC is the number to use as increment for index in block ring."
+  (interactive "*p")
+  (if (not (eq last-command 'copilot-chat-yank-pop))
+      (unless (eq last-command 'copilot-chat-yank)
+        (error "Previous command was not a yank")))
+  (if inc
+      (setq copilot-chat--yank-index (+ copilot-chat--yank-index inc))
+    (setq copilot-chat--yank-index (1+ copilot-chat--yank-index)))
+  (copilot-chat--yank)
+  (setq this-command 'copilot-chat-yank-pop))
+
+(defun copilot-chat--yank()
+  "Insert the code block at the current index in the block ring.
+This function should be overridden by frontends.")
+
 
 (provide 'copilot-chat)
 

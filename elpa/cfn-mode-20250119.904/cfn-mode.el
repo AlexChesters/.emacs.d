@@ -3,8 +3,8 @@
 ;; Copyright (C) 2020  William Orr <will@worrbase.com>
 ;;
 ;; Author: William Orr <will@worrbase.com>
-;; Package-Version: 20250105.904
-;; Package-Revision: dcc8e69fe46a
+;; Package-Version: 20250119.904
+;; Package-Revision: b59ec41be0ab
 ;; Keywords: convenience languages tools
 ;; Package-Requires: ((emacs "27.0") (f "0.20.0") (s "1.12.0")  (yaml-mode "0.0.13"))
 ;; URL: https://gitlab.com/worr/cfn-mode

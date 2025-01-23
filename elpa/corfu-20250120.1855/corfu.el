@@ -5,8 +5,8 @@
 ;; Author: Daniel Mendler <mail@daniel-mendler.de>
 ;; Maintainer: Daniel Mendler <mail@daniel-mendler.de>
 ;; Created: 2021
-;; Package-Version: 20250114.1101
-;; Package-Revision: 9dc2f900ef58
+;; Package-Version: 20250120.1855
+;; Package-Revision: a401b6a3a645
 ;; Package-Requires: ((emacs "28.1") (compat "30"))
 ;; URL: https://github.com/minad/corfu
 ;; Keywords: abbrev, convenience, matching, completion, text
@@ -1066,7 +1066,8 @@ A scroll bar is displayed from LO to LO+BAR."
              (border (alist-get 'internal-border-width corfu--frame-parameters))
              (x (max 0 (min (+ (car edge) (- (or (car pos) 0) ml (* cw off) border))
                             (- (frame-pixel-width) width))))
-             (yb (+ (cadr edge) (window-tab-line-height) (or (cdr pos) 0) lh))
+             (yb (+ (cadr edge) (or (cdr pos) 0) lh
+                    (static-if (< emacs-major-version 31) (window-tab-line-height) 0)))
              (y (if (> (+ yb (* corfu-count ch) lh lh) (frame-pixel-height))
                     (- yb height lh border border)
                   yb))
