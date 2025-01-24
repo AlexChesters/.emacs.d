@@ -229,6 +229,12 @@
   ;; then if you manually call (atc/set-tab-theme) the theme is applied correctly
   (atc/set-tab-theme))
 
+;; typescript mode
+(use-package typescript-mode
+  :defer t
+  :mode
+  (("\\.ts\\'" . typescript-mode)))
+
 ;; web mode
 (use-package web-mode
   :mode
