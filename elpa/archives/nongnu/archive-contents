@@ -2052,7 +2052,7 @@
 	       ("David Christiansen" . "david@davidchristiansen.dk"))
 	      (:commit . "1edda80e2e32b72e77f4f16ae5b83c312c68ee95"))])
  (racket-mode .
-	      [(1 0 20250122 84941)
+	      [(1 0 20250125 153651)
 	       ((emacs
 		 (25 1)))
 	       "Racket editing, REPL, and more" tar
@@ -2150,7 +2150,7 @@
 	      (:keywords "markup" "language" "css")
 	      (:commit . "aee28ea552dce5aade05d8a7f91514e6eb37e59f"))])
  (scad-mode .
-	    [(95 0)
+	    [(96 0)
 	     ((emacs
 	       (28 1))
 	      (compat
@@ -2161,7 +2161,7 @@
 	      (:maintainer
 	       ("Len Trigg" . "lenbok@gmail.com")
 	       ("Daniel Mendler" . "mail@daniel-mendler.de"))
-	      (:commit . "8bc0bbb7ab770ec81d7ce460984a000bf7a3c112"))])
+	      (:commit . "36852e689c34936464b32d1558f6f9428dce63b8"))])
  (scala-mode .
 	     [(1 1 1)
 	      ((emacs
@@ -2299,14 +2299,14 @@
 		     ("John Olsson" . "john@cryon.se"))
 		    (:commit . "2d5acd143a153e16372d59000e57d76291ab81dd"))])
  (subed .
-	[(1 2 23)
+	[(1 2 25)
 	 ((emacs
 	   (25 1)))
 	 "A major mode for editing subtitles" tar
 	 ((:url . "https://github.com/sachac/subed")
 	  (:keywords "convenience" "files" "hypermedia" "multimedia")
 	  (:maintainer "Sacha Chua" . "sacha@sachachua.com")
-	  (:commit . "0a1b5adbd038fd16dce0a72886fbb106442d7816"))])
+	  (:commit . "df6f443ac6ed4c02bacb64a3f1c5c7888dfca5d0"))])
  (sweeprolog .
 	     [(0 27 6)
 	      ((emacs
@@ -2654,14 +2654,14 @@
 	     ((:url . "https://github.com/lewang/ws-butler")
 	      (:commit . "d3927f6131f215e9cd3e1f747be5a91e5be8ca9a"))])
  (xah-fly-keys .
-	       [(26 9 20241225173150)
+	       [(26 9 20250124153828)
 		((emacs
 		  (27)))
 		"ergonomic modal keybinding minor mode." tar
 		((:url . "http://xahlee.info/emacs/misc/xah-fly-keys.html")
 		 (:keywords "convenience" "vi" "vim" "ergoemacs" "keybinding")
 		 (:maintainer "Xah Lee" . "xah@xahlee.org")
-		 (:commit . "723d92aa47d618d2af84bd0bbffbd311103d5f99"))])
+		 (:commit . "bb111ced8ed987101e7a966af5696379d44fa0bc"))])
  (xkcd .
        [(1 1)
 	((json
