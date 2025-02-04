@@ -18,14 +18,13 @@
 
 ;; cfn-mode
 (use-package cfn-mode
-  :defer t
-  :config
-  (add-to-list 'magic-mode-alist
-    '("\\(.\\|\n\\)*Type: AWS::" . cfn-mode))
-  ;; hack to stop this file from having cfn-mode enabled based on the
-  ;; presence of the cfn-mode magic-mode-alist set up
-  (add-to-list 'magic-mode-alist
-               '("\\(.\\|\n\\)*;;; Commentary" . emacs-lisp-mode)))
+  :hook (cfn-mode . flycheck-mode))
+(add-to-list 'magic-mode-alist
+  '("\\(.\\|\n\\)*Type: AWS::" . cfn-mode))
+;; hack to stop this file from having cfn-mode enabled based on the
+;; presence of the cfn-mode magic-mode-alist set up
+(add-to-list 'magic-mode-alist
+  '("\\(.\\|\n\\)*;;; Commentary" . emacs-lisp-mode))
 
 ;; company mode
 (use-package company
