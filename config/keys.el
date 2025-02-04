@@ -48,6 +48,7 @@
 (global-set-key (kbd "s-B") 'atc/neotree-toggle) ; Cmd+Shift+b - neotree
 (global-set-key (kbd "M-.") 'dumb-jump-go) ; Alt+. - dumb jump go
 (global-set-key (kbd "s-g") 'google-this) ; Cmd+g - google this
+(global-set-key (kbd "s-l") 'consult-goto-line) ; Cmd+l = consult go to line
 
 ;; searching
 (global-set-key (kbd "s-f") 'swiper) ; Cmd+f - swiper

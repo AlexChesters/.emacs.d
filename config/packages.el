@@ -43,6 +43,11 @@
   :defer t
   :hook (company-mode . company-box-mode))
 
+;; consult
+(use-package consult
+  :init
+  :hook (completion-list-mode . consult-preview-at-point-mode))
+
 ;; copilot
 (use-package copilot
   :defer t
