@@ -30,7 +30,9 @@
 ;; company mode
 (use-package company
   :defer t
-  :hook (after-init . global-company-mode))
+  :hook (after-init . global-company-mode)
+  :config
+  (setq company-dabbrev-downcase nil))
 
 ;; company-anaconda
 (use-package company-anaconda
