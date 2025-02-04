@@ -28,6 +28,7 @@
 (load-file "~/.emacs.d/config/misc.el") ; Loading miscellanous config
 
 ;; boot behaviour
+(add-hook 'after-init-hook 'atc/set-tab-theme)
 (add-hook 'after-init-hook 'atc/projectile-open-emacs-project)
 
 ;; prevent the creation of backup files

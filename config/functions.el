@@ -165,6 +165,48 @@ If one is found it does steps 1a, 1b, and 1c. as above."
   (let ((display-buffer-overriding-action '(display-buffer-same-window)))
     (ibuffer)))
 
+;; https://gist.github.com/satran/95195fc86289dcf05cc8f66c363edb36
+;; https://www.reddit.com/r/emacs/comments/1c3oqqh/modern_tabs_in_emacs/
+(defun atc/set-tab-theme ()
+  "Set the theme of tabs."
+  (interactive)
+  (let ((bg (face-attribute 'mode-line :background))
+        (fg (face-attribute 'default :foreground))
+        (hg (face-attribute 'default :background))
+        (base (face-attribute 'mode-line :background))
+        (box-width (/ (line-pixel-height) 4)))
+    (set-face-attribute 'tab-line nil
+                        :background base
+                        :foreground fg
+                        :height 0.8
+                        :inherit nil
+                        :box (list :line-width -1 :color base)
+                        )
+    (set-face-attribute 'tab-line-tab nil
+                        :foreground fg
+                        :background bg
+                        :weight 'normal
+                        :inherit nil
+                        :box (list :line-width box-width :color bg))
+    (set-face-attribute 'tab-line-tab-inactive nil
+                        :foreground fg
+                        :background base
+                        :weight 'normal
+                        :inherit nil
+                        :box (list :line-width box-width :color base))
+    (set-face-attribute 'tab-line-highlight nil
+                        :foreground fg
+                        :background hg
+                        :weight 'normal
+                        :inherit nil
+                        :box (list :line-width box-width :color hg))
+    (set-face-attribute 'tab-line-tab-current nil
+                        :foreground fg
+                        :background hg
+                        :weight 'normal
+                        :inherit nil
+                        :box (list :line-width box-width :color hg))))
+
 (provide 'functions)
 
 ;;; functions.el ends here
