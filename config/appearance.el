@@ -37,7 +37,6 @@
 (add-to-list 'display-buffer-alist
   '("^\\*Ibuffer\\*$" . (display-buffer-same-window)))
 
-
 (provide 'appearance)
 
 ;;; appearance.el ends here
