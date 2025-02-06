@@ -121,6 +121,12 @@
 (use-package google-this
   :defer t)
 
+;; hcl-mode
+(use-package hcl-mode
+  :defer t
+  :config
+  (setq hcl-indent-level 2))
+
 ;; ibuffer
 (use-package ibuffer
   :config
