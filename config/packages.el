@@ -86,7 +86,15 @@
 (use-package doom-modeline
   :defer t
   :init (doom-modeline-mode 1)
-  (setq doom-modeline-buffer-file-name-style 'truncate-nil))
+  ;; filename style
+  (setq doom-modeline-buffer-file-name-style 'truncate-nil)
+
+  ;; progress (e.g. line numbers, % through file)
+  (setq doom-modeline-position-line-format nil)
+  (setq doom-modeline-percent-position nil)
+
+  ;; encoding
+  (setq doom-modeline-buffer-encoding nil))
 
 ;; eglot
 (use-package eglot
