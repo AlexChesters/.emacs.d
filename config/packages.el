@@ -189,6 +189,11 @@
   ;; load default config
   (require 'smartparens-config))
 
+;; systemd
+(use-package systemd
+  :defer t
+  :mode ("\\.service\\'" . systemd-mode))
+
 ;; swiper
 (use-package swiper
   :defer t)
