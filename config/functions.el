@@ -119,7 +119,7 @@ If one is found it does steps 1a, 1b, and 1c. as above."
   "Delete a region if its active, otherwise normal backspace behaviour."
   (interactive)
   (if mark-active
-      (kill-region (region-beginning) (region-end))
+      (delete-region (region-beginning) (region-end))
     (delete-char -1)))
 
 ;; custom neotree function
