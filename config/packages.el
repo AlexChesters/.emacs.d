@@ -206,6 +206,11 @@
   (setq tab-line-close-button-show nil)
   (setq tab-line-new-button-show nil))
 
+;; terraform mode
+(use-package terraform-mode
+  :defer t
+  :mode ("\\.tf\\'" . terraform-mode))
+
 ;; typescript mode
 (use-package typescript-mode
   :defer t
