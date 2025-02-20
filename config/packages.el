@@ -67,7 +67,9 @@
 
 ;; copilot-chat
 (use-package copilot-chat
-  :defer t)
+  :defer t
+  :config
+  (setq copilot-chat-frontend 'markdown))
 
 ;; css mode
 (use-package css-mode
