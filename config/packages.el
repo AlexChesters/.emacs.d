@@ -84,6 +84,10 @@
   (prog-mode . diff-hl-mode)
   (magit-mode . diff-hl-mode))
 
+;; dockerfile
+(use-package dockerfile-mode
+  :defer t)
+
 ;; doom-modeline
 (use-package doom-modeline
   :defer t
