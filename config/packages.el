@@ -33,7 +33,6 @@
   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
   (global-set-key (kbd "C-c p") 'projectile-command-map)
   (setq projectile-indexing-method 'alien)
-  (setq projectile-generic-command "fd . -0 --type f --color=never")
   (projectile-mode +1))
 
 ;; vertico
