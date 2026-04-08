@@ -46,7 +46,7 @@
      default))
  '(package-selected-packages
    '(cfn-mode color-theme-sanityinc-tomorrow magit markdown-mode
-              projectile vertico vertico-prescient)))
+              orderless projectile vertico vertico-prescient)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
