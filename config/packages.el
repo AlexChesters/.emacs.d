@@ -28,7 +28,7 @@
 (use-package projectile
   :ensure t
   :init
-  (setq projectile-project-search-path '("~/workspace/"))
+  (setq projectile-project-search-path '("~/workspace/" "~/code/"))
   :config
   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
   (global-set-key (kbd "C-c p") 'projectile-command-map)
