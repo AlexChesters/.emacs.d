@@ -23,6 +23,14 @@
   :bind (:map markdown-mode-map
               ("C-c C-e" . markdown-do)))
 
+;; neotree
+(use-package neotree
+  :defer t
+  :bind ("s-t" . neotree-toggle)
+  :config
+  (setq neo-smart-open t) ;; open at current file
+  (setq projectile-switch-project-action #'neotree-projectile-action))
+
 ;; orderless
 (use-package orderless
   :init
