@@ -1,4 +1,4 @@
-;;; packages.el --- Configuration for packages
+;;; packages.el --- Configuration for packages -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 
@@ -24,6 +24,12 @@
   :config
   (drag-stuff-mode t))
 
+;; flycheck
+(use-package flycheck
+  :defer
+  :hook
+  (prog-mode . flycheck-mode))
+
 ;; markdown mode
 (use-package markdown-mode
   :mode ("\\.md\\'" . gfm-mode)
@@ -36,8 +42,7 @@
   :defer t
   :bind ("s-f" . neotree-toggle)
   :config
-  (setq neo-smart-open t) ;; open at current file
-  (setq projectile-switch-project-action #'neotree-projectile-action))
+  (setq neo-smart-open t)) ;; open at current file
 
 ;; orderless
 (use-package orderless
@@ -46,7 +51,6 @@
         completion-category-defaults nil
         completion-category-overrides '((file (styles partial-completion)))))
 
-;; TODO - FIND FILE IS SLOW
 ;; projectile
 (use-package projectile
   :init
@@ -55,6 +59,7 @@
   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
   (global-set-key (kbd "C-c p") 'projectile-command-map)
   (setq projectile-indexing-method 'alien)
+  (setq projectile-switch-project-action #'neotree-projectile-action)
   (projectile-mode +1))
 
 ;; vertico
