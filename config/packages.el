@@ -40,7 +40,9 @@
 ;; git commit
 (use-package git-commit
   :defer t
-  :hook (git-commit-mode . (lambda () (flycheck-mode -1))))
+  :hook (git-commit-mode . (lambda ()
+                             (copilot-mode -1)
+                             (flycheck-mode -1))))
 
 ;; ibuffer
 (use-package ibuffer
@@ -54,7 +56,7 @@
   :hook
   (prog-mode . flycheck-mode))
 
-;; magic
+;; magict
 (use-package magit
   :defer t)
 
