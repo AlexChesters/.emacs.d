@@ -1,8 +1,10 @@
-;;; appearance.el --- Custom appearance settings
+;;; appearance.el --- Custom appearance settings -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 
 ;;; Code:
+
+(require 'projectile)
 
 ;; hide toolbar
 (tool-bar-mode -1)
