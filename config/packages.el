@@ -45,6 +45,12 @@
 (use-package magit
   :defer t)
 
+;; marginalia
+(use-package marginalia
+  :after (vertico)
+  :config
+  (marginalia-mode))
+
 ;; markdown mode
 (use-package markdown-mode
   :mode ("\\.md\\'" . gfm-mode)

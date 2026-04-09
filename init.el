@@ -47,7 +47,7 @@
      default))
  '(package-selected-packages
    '(ag cfn-mode color-theme-sanityinc-tomorrow drag-stuff flycheck magit
-        markdown-mode neotree orderless projectile vertico
+        marginalia markdown-mode neotree orderless projectile vertico
         vertico-prescient vterm)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
