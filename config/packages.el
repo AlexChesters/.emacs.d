@@ -19,6 +19,19 @@
 (add-to-list 'magic-mode-alist
              '("\\(.\\|\n\\)*;;; Commentary" . emacs-lisp-mode))
 
+(use-package copilot
+  :ensure t
+  :hook (prog-mode . copilot-mode)
+  :bind (:map copilot-completion-map
+              ("<tab>" . copilot-accept-completion)
+              ("TAB" . copilot-accept-completion)
+              ("C-<tab>" . copilot-accept-completion-by-word)
+              ("C-TAB" . copilot-accept-completion-by-word)
+              ("C-n" . copilot-next-completion)
+              ("C-p" . copilot-previous-completion))
+  :config
+  (add-to-list 'copilot-indentation-alist '(prog-mode . 2)))
+
 ;; drag stuff
 (use-package drag-stuff
   :config
@@ -63,6 +76,7 @@
   :defer t
   :bind ("s-f" . neotree-toggle)
   :config
+  (setq neo-show-hidden-files t) ;; show hidden files
   (setq neo-smart-open t)) ;; open at current file
 
 ;; orderless
