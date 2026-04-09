@@ -7,6 +7,9 @@
 ;; hide toolbar
 (tool-bar-mode -1)
 
+;; tab bar
+(tab-bar-mode)
+
 ;; font size
 (set-face-attribute 'default nil :height 150)
 
@@ -24,7 +27,7 @@
                          ""))
                 " | %f %l:%C %*"))
 
-;; Theme
+;; theme
 (load-theme 'sanityinc-tomorrow-night t)
 
 (provide 'appearance)
