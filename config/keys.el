@@ -4,6 +4,9 @@
 
 ;;; Code:
 
+;; editing
+(global-set-key (kbd "M-<down>") 'duplicate-line-below) ; Cmd+alt+down, Duplicate line below
+
 ;; magit
 (define-prefix-command 'magit-kb-map)
 (global-set-key (kbd "C-c v") 'magit-kb-map)
