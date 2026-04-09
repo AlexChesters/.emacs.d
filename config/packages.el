@@ -13,11 +13,15 @@
 ;; hack to stop this file from having cfn-mode enabled based on the
 ;; presence of the cfn-mode magic-mode-alist set up
 (add-to-list 'magic-mode-alist
-  '("\\(.\\|\n\\)*;;; Commentary" . emacs-lisp-mode))
+             '("\\(.\\|\n\\)*;;; Commentary" . emacs-lisp-mode))
+
+;; drag stuff
+(use-package drag-stuff
+  :config
+  (drag-stuff-mode t))
 
 ;; markdown mode
 (use-package markdown-mode
-  :ensure t
   :mode ("\\.md\\'" . gfm-mode)
   :init (setq markdown-command "multimarkdown")
   :bind (:map markdown-mode-map
@@ -41,7 +45,6 @@
 ;; TODO - FIND FILE IS SLOW
 ;; projectile
 (use-package projectile
-  :ensure t
   :init
   (setq projectile-project-search-path '("~/workspace/" "~/code/"))
   :config

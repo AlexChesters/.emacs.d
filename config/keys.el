@@ -5,7 +5,9 @@
 ;;; Code:
 
 ;; editing
-(global-set-key (kbd "M-<down>") 'duplicate-line-below) ; Cmd+alt+down, Duplicate line below
+(global-set-key (kbd "M-<down>") 'duplicate-line-below) ; Alt+shift+down, Duplicate line below
+(global-set-key (kbd "s-<up>") 'drag-stuff-up) ; Cmd+up, Move stuff up
+(global-set-key (kbd "s-<down>") 'drag-stuff-down) ; Cmd+down, Move stuff down
 
 ;; magit
 (define-prefix-command 'magit-kb-map)
