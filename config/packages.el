@@ -74,7 +74,6 @@
   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
   (global-set-key (kbd "C-c p") 'projectile-command-map)
   (setq projectile-indexing-method 'alien)
-  (setq projectile-switch-project-action #'neotree-projectile-action)
   (projectile-mode +1))
 
 ;; vertico
