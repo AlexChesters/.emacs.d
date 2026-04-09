@@ -1,4 +1,4 @@
-;;; keys.el --- Custom keybindings
+;;; keys.el --- Custom keybindings -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 
@@ -29,6 +29,7 @@
 (global-set-key (kbd "s-<right>") 'tab-next) ; Cmd+right, Right tab
 (global-set-key (kbd "s-t") 'tab-new) ; Cmd+t, New tab
 (global-set-key (kbd "s-w") 'tab-close) ; Cmd+w, Close tab
+(global-set-key (kbd "s-b") 'ibuffer) ; Cmd+b, ibuffer
 
 (provide 'keys)
 

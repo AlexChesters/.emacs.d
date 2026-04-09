@@ -24,6 +24,12 @@
   :config
   (drag-stuff-mode t))
 
+;; ibuffer
+(use-package ibuffer
+  :config
+  ;; don't prompt for confirmation dialogs
+  (setq ibuffer-expert t))
+
 ;; flycheck
 (use-package flycheck
   :defer
