@@ -19,6 +19,7 @@
 (add-to-list 'magic-mode-alist
              '("\\(.\\|\n\\)*;;; Commentary" . emacs-lisp-mode))
 
+;; copilot
 (use-package copilot
   :ensure t
   :hook (prog-mode . copilot-mode)
@@ -30,7 +31,21 @@
               ("C-n" . copilot-next-completion)
               ("C-p" . copilot-previous-completion))
   :config
-  (add-to-list 'copilot-indentation-alist '(prog-mode . 2)))
+  ;; Set mode-specific indentation, plus a default fallback
+  (setq copilot-indentation-alist
+        '((prog-mode . 2)
+          (org-mode . 2)
+          (text-mode . 2)
+          (closure-mode . 2)
+          (emacs-lisp-mode . 2)
+          (lisp-interaction-mode . 2)
+          (default . 2)))
+  ;; Fallback to 2 spaces if no mode-specific indentation is found
+  (advice-add 'copilot--infer-indentation-offset :around
+            (lambda (orig-fn)
+              (or (funcall orig-fn)
+                  2))))
+
 
 ;; drag stuff
 (use-package drag-stuff
