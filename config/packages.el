@@ -24,6 +24,11 @@
   :config
   (drag-stuff-mode t))
 
+;; git commit
+(use-package git-commit
+  :defer t
+  :hook (git-commit-mode . (lambda () (flycheck-mode -1))))
+
 ;; ibuffer
 (use-package ibuffer
   :config
@@ -35,6 +40,10 @@
   :defer
   :hook
   (prog-mode . flycheck-mode))
+
+;; magic
+(use-package magit
+  :defer t)
 
 ;; markdown mode
 (use-package markdown-mode
