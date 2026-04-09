@@ -19,6 +19,9 @@
 ;; case-insensitive completion
 (setq completion-ignore-case t)
 
+;; electric pair mode
+(electric-pair-mode)
+
 (provide 'misc)
 
 ;;; misc.el ends here
