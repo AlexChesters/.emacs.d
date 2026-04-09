@@ -6,6 +6,10 @@
 
 (provide 'packages)
 
+;; ag
+(use-package ag
+  :defer t)
+
 ;; cfn-mode
 (use-package cfn-mode)
 (add-to-list 'magic-mode-alist

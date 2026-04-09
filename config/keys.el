@@ -9,6 +9,9 @@
 (global-set-key (kbd "s-<up>") 'drag-stuff-up) ; Cmd+up, Move stuff up
 (global-set-key (kbd "s-<down>") 'drag-stuff-down) ; Cmd+down, Move stuff down
 
+;; exploration
+(global-set-key (kbd "s-S") 'ag) ; Cmd+S, Search using ag
+
 ;; magit
 (define-prefix-command 'magit-kb-map)
 (global-set-key (kbd "C-c v") 'magit-kb-map)
