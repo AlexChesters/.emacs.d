@@ -10,6 +10,11 @@
 ;; collection.  The default is 800 kilobytes.  Measured in bytes.
 (setq gc-cons-threshold (* 50 1000 1000))
 
+;; melpa
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+
 ;; use-package
 (eval-when-compile
   (require 'use-package))
@@ -26,11 +31,6 @@
 (load-file "~/.emacs.d/config/keys.el") ; Loading key-bindings
 (load-file "~/.emacs.d/config/appearance.el") ; Loading custom appearance stuff
 (load-file "~/.emacs.d/config/misc.el") ; Loading miscellanous config
-
-;; melpa
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(package-initialize)
 
 ;; Make gc pauses faster by decreasing the threshold.
 (setq gc-cons-threshold (* 2 1000 1000))

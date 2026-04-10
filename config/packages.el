@@ -82,6 +82,19 @@
   :config
   (add-to-list 'flycheck-checkers 'cfn-lint))
 
+;; lsp-mode
+(use-package lsp-mode
+  :ensure t
+  :hook (python-mode . lsp)
+  :config
+  (setq lsp-keymap-prefix "C-c l")           ;; prefix for all lsp commands
+  (setq lsp-diagnostics-provider :flycheck)) ;; use existing flycheck for diagnostics
+
+;; lsp-pyright
+(use-package lsp-pyright
+  :ensure t
+  :hook (python-mode . (lambda () (require 'lsp-pyright))))
+
 ;; magict
 (use-package magit
   :ensure t
