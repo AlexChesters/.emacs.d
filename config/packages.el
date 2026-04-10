@@ -82,12 +82,22 @@
   :config
   (add-to-list 'flycheck-checkers 'cfn-lint))
 
+;; corfu (inline completion popup, works with eglot's CAPF)
+(use-package corfu
+  :ensure t
+  :init
+  (global-corfu-mode)
+  :custom
+  (corfu-auto t)
+  (corfu-auto-delay 0.2)
+  (corfu-auto-prefix 2))
+
 ;; eglot (built-in LSP client)
 (use-package eglot
-  :hook (python-mode . eglot-ensure)
+  :hook ((python-mode python-ts-mode) . eglot-ensure)
   :config
   (add-to-list 'eglot-server-programs
-               '(python-mode . ("pyright-langserver" "--stdio"))))
+               '((python-mode python-ts-mode) . ("pyright-langserver" "--stdio"))))
 
 ;; magict
 (use-package magit
