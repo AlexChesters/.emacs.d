@@ -31,3 +31,7 @@ recentf
 
 # elpa packages
 elpa/
+
+# lsp stuff
+tramp
+.lsp-session-v1
