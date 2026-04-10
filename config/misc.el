@@ -22,6 +22,10 @@
 ;; electric pair mode
 (electric-pair-mode)
 
+;; put backup files in a central trash store
+(setq backup-directory-alist
+      '((".*" . "~/.emacs-trash")))
+
 ;; nodejs
 (add-to-list 'exec-path "/Users/alex/.nvm/versions/node/v24.14.1/bin")
 (setenv "PATH" (concat "/Users/alex/.nvm/versions/node/v24.14.1/bin:" (getenv "PATH")))
