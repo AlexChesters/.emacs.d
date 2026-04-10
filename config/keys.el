@@ -8,7 +8,7 @@
 (global-set-key (kbd "M-<down>") 'duplicate-line-below) ; Alt+shift+down, Duplicate line below
 (global-set-key (kbd "s-<up>") 'drag-stuff-up) ; Cmd+up, Move stuff up
 (global-set-key (kbd "s-<down>") 'drag-stuff-down) ; Cmd+down, Move stuff down
-(global-set-key (kbd "s-k") 'kill-line) ; Cmd+k, Kill line
+(global-set-key (kbd "s-k") 'kill-whole-line) ; Cmd+k, Kill line
 (global-set-key (kbd "s-n") 'make-empty-file) ; Cmd+n, Make a new file
 
 ;; exploration
