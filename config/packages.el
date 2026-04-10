@@ -52,12 +52,28 @@
                 (or (funcall orig-fn)
                     2)))))
 
+;; corfu (inline completion popup, works with eglot's CAPF)
+(use-package corfu
+  :ensure t
+  :init
+  (global-corfu-mode)
+  :custom
+  (corfu-auto t)
+  (corfu-auto-delay 0.2)
+  (corfu-auto-prefix 2))
 
 ;; drag stuff
 (use-package drag-stuff
   :ensure t
   :config
   (drag-stuff-mode t))
+;; eglot (built-in LSP client)
+
+(use-package eglot
+  :hook ((python-mode python-ts-mode) . eglot-ensure)
+  :config
+  (add-to-list 'eglot-server-programs
+               '((python-mode python-ts-mode) . ("pyright-langserver" "--stdio"))))
 
 ;; git commit
 (use-package git-commit
@@ -81,23 +97,6 @@
   (prog-mode . flycheck-mode)
   :config
   (add-to-list 'flycheck-checkers 'cfn-lint))
-
-;; corfu (inline completion popup, works with eglot's CAPF)
-(use-package corfu
-  :ensure t
-  :init
-  (global-corfu-mode)
-  :custom
-  (corfu-auto t)
-  (corfu-auto-delay 0.2)
-  (corfu-auto-prefix 2))
-
-;; eglot (built-in LSP client)
-(use-package eglot
-  :hook ((python-mode python-ts-mode) . eglot-ensure)
-  :config
-  (add-to-list 'eglot-server-programs
-               '((python-mode python-ts-mode) . ("pyright-langserver" "--stdio"))))
 
 ;; magict
 (use-package magit
