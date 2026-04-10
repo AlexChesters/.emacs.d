@@ -22,7 +22,9 @@
 ;; copilot
 (use-package copilot
   :ensure t
-  :hook (prog-mode . copilot-mode)
+  :hook (prog-mode . (lambda ()
+                       (when (file-exists-p "~/.work-machine")
+                         (copilot-mode 1))))
   :bind (:map copilot-completion-map
               ("<tab>" . copilot-accept-completion)
               ("TAB" . copilot-accept-completion)
