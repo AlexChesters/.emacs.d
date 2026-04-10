@@ -15,6 +15,9 @@
 ;; enable tracking of recent files
 (recentf-mode 1)
 
+;; revert buffers when the underlying file has changed
+(global-auto-revert-mode 1)
+
 ;; font size
 (set-face-attribute 'default nil :height 150)
 
