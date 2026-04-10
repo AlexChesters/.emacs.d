@@ -19,7 +19,7 @@
 (define-key 'magit-kb-map (kbd "s") 'magit-status)
 
 ;; misc
-(global-set-key (kbd "s-W") 'kill-buffer-and-window) ; Cmd+w - kill buffer and its window
+(global-set-key (kbd "s-w") 'kill-buffer-and-window) ; Cmd+w - kill buffer and its window
 
 ;; navigation
 (global-set-key (kbd "M-s-<left>") 'windmove-left) ; Cmd+alt+left, Move left buffer
@@ -29,7 +29,7 @@
 (global-set-key (kbd "s-<left>") 'tab-previous) ; Cmd+left, Previous tab
 (global-set-key (kbd "s-<right>") 'tab-next) ; Cmd+right, Right tab
 (global-set-key (kbd "s-t") 'tab-new) ; Cmd+t, New tab
-(global-set-key (kbd "s-w") 'tab-close) ; Cmd+w, Close tab
+(global-set-key (kbd "s-W") 'tab-close) ; Cmd+W, Close tab
 (global-set-key (kbd "s-b") 'ibuffer) ; Cmd+b, ibuffer
 
 (provide 'keys)
