@@ -69,7 +69,9 @@
 (use-package flycheck
   :defer
   :hook
-  (prog-mode . flycheck-mode))
+  (prog-mode . flycheck-mode)
+  :config
+  (add-to-list 'flycheck-checkers 'cfn-lint))
 
 ;; magict
 (use-package magit
