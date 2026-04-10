@@ -82,18 +82,12 @@
   :config
   (add-to-list 'flycheck-checkers 'cfn-lint))
 
-;; lsp-mode
-(use-package lsp-mode
-  :ensure t
-  :hook (python-mode . lsp)
+;; eglot (built-in LSP client)
+(use-package eglot
+  :hook (python-mode . eglot-ensure)
   :config
-  (setq lsp-keymap-prefix "C-c l")           ;; prefix for all lsp commands
-  (setq lsp-diagnostics-provider :flycheck)) ;; use existing flycheck for diagnostics
-
-;; lsp-pyright
-(use-package lsp-pyright
-  :ensure t
-  :hook (python-mode . (lambda () (require 'lsp-pyright))))
+  (add-to-list 'eglot-server-programs
+               '(python-mode . ("pyright-langserver" "--stdio"))))
 
 ;; magict
 (use-package magit
