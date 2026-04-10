@@ -9,6 +9,7 @@
 (global-set-key (kbd "s-<up>") 'drag-stuff-up) ; Cmd+up, Move stuff up
 (global-set-key (kbd "s-<down>") 'drag-stuff-down) ; Cmd+down, Move stuff down
 (global-set-key (kbd "s-k") 'kill-line) ; Cmd+k, Kill line
+(global-set-key (kbd "s-n") 'make-empty-file) ; Cmd+n, Make a new file
 
 ;; exploration
 (global-set-key (kbd "s-G") 'ag) ; Cmd+G, Search using ag
