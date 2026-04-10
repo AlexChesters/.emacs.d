@@ -52,15 +52,6 @@
   :config
   (drag-stuff-mode t))
 
-;; elpy
-(use-package elpy
-  :defer t
-  :init
-  (advice-add 'python-mode :before 'elpy-enable)
-  :bind (:map elpy-mode-map
-              ("s-d" . elpy-goto-definition)
-              ("s-A" . elpy-goto-assignment)))
-
 ;; git commit
 (use-package git-commit
   :defer t
