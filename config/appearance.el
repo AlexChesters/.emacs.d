@@ -9,9 +9,6 @@
 ;; hide toolbar
 (tool-bar-mode -1)
 
-;; tab bar
-(tab-bar-mode)
-
 ;; font size
 (set-face-attribute 'default nil :height 150)
 
