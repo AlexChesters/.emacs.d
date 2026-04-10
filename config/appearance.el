@@ -18,6 +18,9 @@
 ;; revert buffers when the underlying file has changed
 (global-auto-revert-mode 1)
 
+;; revert Dired and other buffers
+(setq global-auto-revert-non-file-buffers t)
+
 ;; font size
 (set-face-attribute 'default nil :height 150)
 
