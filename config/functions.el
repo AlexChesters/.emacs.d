@@ -5,6 +5,7 @@
 ;;; Code:
 
 (require 'projectile)
+(require 'pyvenv)
 
 ;; https://stackoverflow.com/a/551053
 (defun duplicate-line-below ()
@@ -32,6 +33,42 @@ If that doesn't exist, open the first project file."
     (when file
       (find-file file))))
 (setq projectile-switch-project-action #'atc/projectile-find-first-file)
+
+(defun atc/find-pyvenv-root (dir)
+  "Walk up from DIR looking for a .venv or venv directory."
+  (when-let ((root (locate-dominating-file
+                    dir
+                    (lambda (d)
+                      (seq-find #'file-directory-p
+                                (mapcar (lambda (name) (expand-file-name name d))
+                                        '(".venv" "venv")))))))
+    (seq-find #'file-directory-p
+              (mapcar (lambda (name) (expand-file-name name root))
+                      '(".venv" "venv")))))
+
+(defun atc/projectile-activate-pyvenv ()
+  "Activate a pyvenv virtualenv when switching Projectile projects.
+Looks for a .venv or venv directory in the project root."
+  (when-let* ((root (vc-root-dir))
+              (venv-path (seq-find #'file-directory-p
+                                   (mapcar (lambda (name)
+                                             (expand-file-name name root))
+                                           '(".venv" "venv")))))
+    (pyvenv-activate venv-path)))
+
+(defun atc/buffer-activate-pyvenv ()
+  "Activate a pyvenv virtualenv based on the current buffer's location.
+Walks up from the buffer's directory to find the nearest .venv or venv."
+  (when (and buffer-file-name
+             (derived-mode-p 'python-mode))
+    (when-let ((venv-path (atc/find-pyvenv-root (file-name-directory buffer-file-name))))
+      (unless (equal (file-truename venv-path)
+                     (and pyvenv-virtual-env (file-truename pyvenv-virtual-env)))
+        (pyvenv-activate venv-path)))))
+
+(add-hook 'projectile-after-switch-project-hook #'atc/projectile-activate-pyvenv)
+(add-hook 'python-mode-hook #'atc/buffer-activate-pyvenv)
+(add-hook 'window-configuration-change-hook #'atc/buffer-activate-pyvenv)
 
 (provide 'functions)
 
