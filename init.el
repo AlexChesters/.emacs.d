@@ -47,7 +47,7 @@
    '("6fc9e40b4375d9d8d0d9521505849ab4d04220ed470db0b78b700230da0a86c1"
      default))
  '(package-selected-packages
-   '(ag cfn-mode color-theme-sanityinc-tomorrow copilot drag-stuff
+   '(ag cfn-mode color-theme-sanityinc-tomorrow copilot drag-stuff elpy
         flycheck magit marginalia markdown-mode neotree orderless
         projectile swiper vertico vertico-prescient vterm)))
 (custom-set-faces
