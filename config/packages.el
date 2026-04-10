@@ -40,11 +40,13 @@
           (emacs-lisp-mode . 2)
           (lisp-interaction-mode . 2)
           (default . 2)))
-  ;; Fallback to 2 spaces if no mode-specific indentation is found
+  ;; Fallback to 2 spaces if no mode-specific indentation is found.
+  ;; Suppress the warning it emits before returning nil (e.g. in emacs-lisp-mode).
   (advice-add 'copilot--infer-indentation-offset :around
             (lambda (orig-fn)
-              (or (funcall orig-fn)
-                  2))))
+              (let ((warning-minimum-level :error))
+                (or (funcall orig-fn)
+                    2)))))
 
 
 ;; drag stuff
