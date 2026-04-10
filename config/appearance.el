@@ -12,6 +12,9 @@
 ;; hide scrollbar
 (scroll-bar-mode -1)
 
+;; enable tracking of recent files
+(recentf-mode 1)
+
 ;; font size
 (set-face-attribute 'default nil :height 150)
 
