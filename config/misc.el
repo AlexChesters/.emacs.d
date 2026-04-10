@@ -22,6 +22,10 @@
 ;; electric pair mode
 (electric-pair-mode)
 
+;; nodejs
+(add-to-list 'exec-path "/Users/alex/.nvm/versions/node/v24.14.1/bin")
+(setenv "PATH" (concat "/Users/alex/.nvm/versions/node/v24.14.1/bin:" (getenv "PATH")))
+
 (provide 'misc)
 
 ;;; misc.el ends here
