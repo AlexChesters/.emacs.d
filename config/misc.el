@@ -26,8 +26,8 @@
 (setq backup-directory-alist
       '((".*" . "~/.emacs-trash")))
 
-;; don't ask for confirmation when killing processes
-(setq confirm-kill-processes nil)
+;; don't ask for confirmation when killing buffers
+(setq kill-buffer-query-functions nil)
 
 ;; nodejs
 (add-to-list 'exec-path "/Users/alex/.nvm/versions/node/v24.14.1/bin")
