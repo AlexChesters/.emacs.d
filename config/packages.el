@@ -71,6 +71,10 @@
 
 (use-package eglot
   :hook ((python-mode python-ts-mode) . eglot-ensure)
+  :bind (:map python-mode-map
+              ("s-r" . eglot-rename)
+              :map python-ts-mode-map
+              ("s-r" . eglot-rename))
   :config
   (add-to-list 'eglot-server-programs
                '((python-mode python-ts-mode) . ("pyright-langserver" "--stdio"))))
