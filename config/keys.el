@@ -32,7 +32,7 @@
 (global-set-key (kbd "s-<right>") 'tab-next) ; Cmd+right, Right tab
 (global-set-key (kbd "s-W") 'tab-close) ; Cmd+W, Close tab
 (global-set-key (kbd "s-b") 'ibuffer) ; Cmd+b, ibuffer
-(global-set-key (kbd "s-t") 'atc/open-vterm) ; Cmd+t, toggle terminal
+(global-set-key (kbd "s-t") 'atc/toggle-vterm) ; Cmd+t, toggle terminal
 
 (provide 'keys)
 
