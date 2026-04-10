@@ -13,7 +13,7 @@
 
 ;; exploration
 (global-set-key (kbd "s-G") 'ag) ; Cmd+G, Search using ag
-(global-set-key (kbd "s-S") 'swiper) ; Cmd+S, Search using swiper
+(global-set-key (kbd "s-f") 'swiper) ; Cmd+f, Search using swiper
 
 ;; magit
 (define-prefix-command 'magit-kb-map)

@@ -97,8 +97,9 @@
 ;; neotree
 (use-package neotree
   :defer t
-  :bind ("s-f" . neotree-toggle)
+  :bind ("s-F" . neotree-toggle)
   :config
+  (setq neo-theme (if (display-graphic-p) 'icons 'arrow)) ;; set theme, icons if GUI, otherwise arrow
   (setq neo-show-hidden-files t) ;; show hidden files
   (setq neo-smart-open t)) ;; open at current file
 
