@@ -30,9 +30,9 @@
 (global-set-key (kbd "M-s-<down>") 'windmove-down) ; Cmd+alt+down, Move down buffer
 (global-set-key (kbd "s-<left>") 'tab-previous) ; Cmd+left, Previous tab
 (global-set-key (kbd "s-<right>") 'tab-next) ; Cmd+right, Right tab
-(global-set-key (kbd "s-t") 'tab-new) ; Cmd+t, New tab
 (global-set-key (kbd "s-W") 'tab-close) ; Cmd+W, Close tab
 (global-set-key (kbd "s-b") 'ibuffer) ; Cmd+b, ibuffer
+(global-set-key (kbd "s-t") 'vterm-toggle) ; Cmd+t, toggle terminal
 
 (provide 'keys)
 

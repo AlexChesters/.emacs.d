@@ -49,7 +49,8 @@
  '(package-selected-packages
    '(ag all-the-icons cfn-mode color-theme-sanityinc-tomorrow copilot
         drag-stuff flycheck magit marginalia markdown-mode neotree
-        orderless projectile swiper vertico vertico-prescient vterm)))
+        orderless projectile swiper vertico vertico-prescient vterm
+        vterm-toggle)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

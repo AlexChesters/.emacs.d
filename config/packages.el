@@ -135,4 +135,10 @@
   :defer t
   :hook (vertico-mode . vertico-prescient-mode))
 
+;; vterm
+(use-package vterm
+  :defer t)
+(use-package vterm-toggle
+  :defer t)
+
 ;;; packages.el ends here
