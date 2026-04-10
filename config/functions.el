@@ -70,6 +70,14 @@ Walks up from the buffer's directory to find the nearest .venv or venv."
 (add-hook 'python-mode-hook #'atc/buffer-activate-pyvenv)
 (add-hook 'window-configuration-change-hook #'atc/buffer-activate-pyvenv)
 
+;; https://www.reddit.com/r/emacs/comments/u5rx6z/open_vterm_in_resized_horizontal_split/
+(defun atc/open-vterm ()
+  "Open a vterm window split vertically."
+  (interactive)
+  (split-window-vertically)
+  (other-window 1)
+  (vterm))
+
 (provide 'functions)
 
 ;;; functions.el ends here
