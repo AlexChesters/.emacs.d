@@ -8,10 +8,12 @@
 
 ;; ag
 (use-package ag
+  :ensure t
   :defer t)
 
 ;; cfn-mode
-(use-package cfn-mode)
+(use-package cfn-mode
+  :ensure t)
 (add-to-list 'magic-mode-alist
   '("\\(.\\|\n\\)*Type: AWS::" . cfn-mode))
 ;; hack to stop this file from having cfn-mode enabled based on the
@@ -53,6 +55,7 @@
 
 ;; drag stuff
 (use-package drag-stuff
+  :ensure t
   :config
   (drag-stuff-mode t))
 
@@ -65,13 +68,15 @@
 
 ;; ibuffer
 (use-package ibuffer
+  :ensure t
   :config
   ;; don't prompt for confirmation dialogs
   (setq ibuffer-expert t))
 
 ;; flycheck
 (use-package flycheck
-  :defer
+  :ensure t
+  :defer t
   :hook
   (prog-mode . flycheck-mode)
   :config
@@ -79,16 +84,19 @@
 
 ;; magict
 (use-package magit
+  :ensure t
   :defer t)
 
 ;; marginalia
 (use-package marginalia
+  :ensure t
   :after (vertico)
   :config
   (marginalia-mode))
 
 ;; markdown mode
 (use-package markdown-mode
+  :ensure t
   :mode ("\\.md\\'" . gfm-mode)
   :init (setq markdown-command "multimarkdown")
   :bind (:map markdown-mode-map
@@ -96,6 +104,7 @@
 
 ;; neotree
 (use-package neotree
+  :ensure t
   :defer t
   :bind ("s-F" . neotree-toggle)
   :config
@@ -106,6 +115,7 @@
 
 ;; orderless
 (use-package orderless
+  :ensure t
   :init
   (setq completion-styles '(orderless)
         completion-category-defaults nil
@@ -113,6 +123,7 @@
 
 ;; projectile
 (use-package projectile
+  :ensure t
   :init
   (setq projectile-project-search-path '("~/workspace/" "~/code/"))
   :config
@@ -123,6 +134,7 @@
 
 ;; vertico
 (use-package vertico
+  :ensure t
   ;:custom
   ;; (vertico-scroll-margin 0) ;; Different scroll margin
   ;; (vertico-count 20) ;; Show more candidates
@@ -132,13 +144,16 @@
   (vertico-mode))
 
 (use-package vertico-prescient
+  :ensure t
   :defer t
   :hook (vertico-mode . vertico-prescient-mode))
 
 ;; vterm
 (use-package vterm
+  :ensure t
   :defer t)
 (use-package vterm-toggle
+  :ensure t
   :defer t)
 
 ;;; packages.el ends here

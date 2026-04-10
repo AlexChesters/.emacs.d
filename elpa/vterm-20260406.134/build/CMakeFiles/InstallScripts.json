@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/Users/alex/.emacs.d/elpa/vterm-20260406.134/build/cmake_install.cmake"
-	],
-	"Parallel" : false
-}
