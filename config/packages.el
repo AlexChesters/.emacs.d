@@ -113,7 +113,8 @@
                      (name . "^\\*info\\*$")
                      (name . "^\\*scratch\\*$")
                      (name . "^\\*Backtrace\\*$")
-                     (name . "^\\*Messages\\*$"))))
+                     (name . "^\\*Messages\\*$")
+                     (name . "^\\*copilot"))))
            ("Directories" (mode . dired-mode))
            ("Python" (or
                       (mode . python-ts-mode)
