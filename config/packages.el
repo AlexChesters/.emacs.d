@@ -174,6 +174,11 @@
   (setq projectile-indexing-method 'alien)
   (projectile-mode +1))
 
+;; swiper
+(use-package swiper
+  :ensure t
+  :defer t)
+
 ;; vertico
 (use-package vertico
   :ensure t
