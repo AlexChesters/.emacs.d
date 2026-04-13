@@ -36,3 +36,6 @@ elpa/
 # lsp stuff
 tramp
 .lsp-session-v1
+
+# org stuff
+bookmarks
