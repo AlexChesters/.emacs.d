@@ -4,7 +4,11 @@
 
 ;;; Code:
 
-(provide 'packages)
+;;; declare functions/variables from deferred packages to silence byte-compiler
+(defvar python-mode-map)
+(defvar python-ts-mode-map)
+(defvar ibuffer-saved-filter-groups)
+(declare-function ibuffer-switch-to-saved-filter-groups "ibuffer" (name))
 
 ;; ag
 (use-package ag
@@ -234,5 +238,7 @@
 (use-package vterm-toggle
   :ensure t
   :defer t)
+
+(provide 'packages)
 
 ;;; packages.el ends here
