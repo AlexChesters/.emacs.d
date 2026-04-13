@@ -105,6 +105,15 @@
   ;; group buffers
   (setq ibuffer-saved-filter-groups
         '(("Main"
+           ("Emacs" (or
+                     (mode . emacs-lisp-mode)
+                     (name . "^\\*Help\\*$")
+                     (name . "^\\*Custom.*")
+                     (name . "^\\*Org Agenda\\*$")
+                     (name . "^\\*info\\*$")
+                     (name . "^\\*scratch\\*$")
+                     (name . "^\\*Backtrace\\*$")
+                     (name . "^\\*Messages\\*$"))))
            ("Directories" (mode . dired-mode))
            ("Python" (or
                       (mode . python-ts-mode)
@@ -119,16 +128,10 @@
                      (mode . magit-status-mode)))
            ("Fundamental" (or
                            (mode . fundamental-mode)
-                           (mode . text-mode)))
-           ("Emacs" (or
-                     (mode . emacs-lisp-mode)
-                     (name . "^\\*Help\\*$")
-                     (name . "^\\*Custom.*")
-                     (name . "^\\*Org Agenda\\*$")
-                     (name . "^\\*info\\*$")
-                     (name . "^\\*scratch\\*$")
-                     (name . "^\\*Backtrace\\*$")
-                     (name . "^\\*Messages\\*$")))))))
+                           (mode . text-mode)))))
+  :hook
+  (ibuffer-mode . (lambda ()
+                    (ibuffer-switch-to-saved-filter-groups "Main"))))
 
 ;; flycheck
 (use-package flycheck
