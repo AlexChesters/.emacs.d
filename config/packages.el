@@ -11,6 +11,11 @@
   :ensure t
   :defer t)
 
+;; all the icons
+(use-package all-the-icons
+  :ensure t
+  :defer t)
+
 ;; cfn-mode
 (use-package cfn-mode
   :ensure t)
