@@ -100,36 +100,39 @@
 (use-package ibuffer
   :ensure t
   :config
-  (setq ibuffer-expert t))
-
-(use-package ibuffer-projectile
-  :ensure t
-  :after (ibuffer projectile)
+  ;; don't prompt for confirmation dialogs
+  (setq ibuffer-expert t)
+  ;; group buffers
+  (setq ibuffer-saved-filter-groups
+        '(("Main"
+           ("Python" (or
+                      (mode . python-ts-mode)
+                      (mode . c-mode)
+                      (mode . python-mode)))
+           ("Emacs" (or
+                     (mode . emacs-lisp-mode)
+                     (name . "^\\*Help\\*$")
+                     (name . "^\\*Custom.*")
+                     (name . "^\\*Org Agenda\\*$")
+                     (name . "^\\*info\\*$")
+                     (name . "^\\*scratch\\*$")
+                     (name . "^\\*Backtrace\\*$")
+                     (name . "^\\*Messages\\*$")
+                     (name . "^\\*copilot"))))
+           ("Directories" (mode . dired-mode))
+           ("Magit" (or
+                     (mode . magit-blame-mode)
+                     (mode . magit-cherry-mode)
+                     (mode . magit-diff-mode)
+                     (mode . magit-log-mode)
+                     (mode . magit-process-mode)
+                     (mode . magit-status-mode)))
+           ("Fundamental" (or
+                           (mode . fundamental-mode)
+                           (mode . text-mode)))))
   :hook
   (ibuffer-mode . (lambda ()
-                    (ibuffer-projectile-set-filter-groups)
-                    (setq ibuffer-filter-groups
-                          (append ibuffer-filter-groups
-                                  '(("Emacs" (or
-                                              (mode . emacs-lisp-mode)
-                                              (name . "^\\*Help\\*$")
-                                              (name . "^\\*Custom.*")
-                                              (name . "^\\*Org Agenda\\*$")
-                                              (name . "^\\*info\\*$")
-                                              (name . "^\\*scratch\\*$")
-                                              (name . "^\\*Backtrace\\*$")
-                                              (name . "^\\*Messages\\*$")
-                                              (name . "^\\*copilot")))
-                                    ("Directories" (mode . dired-mode))
-                                    ("Magit" (or
-                                              (mode . magit-blame-mode)
-                                              (mode . magit-cherry-mode)
-                                              (mode . magit-diff-mode)
-                                              (mode . magit-log-mode)
-                                              (mode . magit-process-mode)
-                                              (mode . magit-status-mode))))))
-                    (unless (eq ibuffer-sorting-mode 'alphabetic)
-                      (ibuffer-do-sort-by-alphabetic)))))
+                    (ibuffer-switch-to-saved-filter-groups "Main"))))
 
 ;; flycheck
 (use-package flycheck
