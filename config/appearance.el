@@ -43,6 +43,11 @@
                                        'display `((space :align-to (- right ,(string-width time-str)))))
                            time-str)))))
 
+;; column rulers
+(setq-default fill-column 160)
+(add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
+(add-hook 'org-mode-hook #'display-fill-column-indicator-mode)
+
 ;; theme
 (load-theme 'doom-vibrant t)
 
