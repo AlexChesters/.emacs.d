@@ -29,6 +29,9 @@
 ;; don't ask for confirmation when killing buffers
 (setq kill-buffer-query-functions nil)
 
+;; y/n instead of yes/no
+(setopt use-short-answers t)
+
 ;; nodejs
 (add-to-list 'exec-path "/Users/alex/.nvm/versions/node/v24.14.1/bin")
 (setenv "PATH" (concat "/Users/alex/.nvm/versions/node/v24.14.1/bin:" (getenv "PATH")))
