@@ -105,6 +105,10 @@
   ;; group buffers
   (setq ibuffer-saved-filter-groups
         '(("Main"
+           ("Python" (or
+                      (mode . python-ts-mode)
+                      (mode . c-mode)
+                      (mode . python-mode)))
            ("Emacs" (or
                      (mode . emacs-lisp-mode)
                      (name . "^\\*Help\\*$")
@@ -116,10 +120,6 @@
                      (name . "^\\*Messages\\*$")
                      (name . "^\\*copilot"))))
            ("Directories" (mode . dired-mode))
-           ("Python" (or
-                      (mode . python-ts-mode)
-                      (mode . c-mode)
-                      (mode . python-mode)))
            ("Magit" (or
                      (mode . magit-blame-mode)
                      (mode . magit-cherry-mode)
