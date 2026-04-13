@@ -22,6 +22,7 @@
 
 ;; misc
 (global-set-key (kbd "s-w") 'kill-buffer-and-window) ; Cmd+w - kill buffer and its window
+(global-set-key (kbd "s-<return>") 'eval-buffer) ; Cmd+return - evaluate buffer
 
 ;; navigation
 (global-set-key (kbd "M-s-<left>") 'windmove-left) ; Cmd+alt+left, Move left buffer
