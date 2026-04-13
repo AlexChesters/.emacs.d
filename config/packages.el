@@ -80,6 +80,7 @@
   (markdown-mode . (lambda () (corfu-mode -1)))
   (gfm-mode      . (lambda () (corfu-mode -1)))
   (text-mode    . (lambda () (corfu-mode -1)))
+  (org-mode     . (lambda () (corfu-mode -1)))
   :custom
   (corfu-auto t)
   (corfu-auto-delay 0.2)
