@@ -35,6 +35,7 @@
 (global-set-key (kbd "s-b") 'ibuffer) ; Cmd+b, ibuffer
 (global-set-key (kbd "s-j") 'switch-to-buffer) ; Cmd+j, switch buffer
 (global-set-key (kbd "s-t") 'atc/toggle-vterm) ; Cmd+t, toggle terminal
+(global-set-key (kbd "C-c c") 'org-capture) ; Ctrl+c c, quickly capture something in org-mode
 
 (provide 'keys)
 

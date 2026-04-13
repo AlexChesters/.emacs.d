@@ -215,6 +215,15 @@
         completion-category-defaults nil
         completion-category-overrides '((file (styles partial-completion)))))
 
+;; org
+(use-package org
+  :ensure t
+  :config
+  (setq org-directory "~/org")
+  (setq org-default-notes-file "~/org/inbox.org")
+  :hook
+  (org-mode . org-indent-mode))
+
 ;; projectile
 (use-package projectile
   :ensure t
