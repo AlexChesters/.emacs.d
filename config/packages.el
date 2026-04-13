@@ -123,18 +123,12 @@
                      (name . "^\\*Backtrace\\*$")
                      (name . "^\\*Messages\\*$")
                      (name . "^\\*Warnings\\*$")
-                     (name . "^\\*copilot"))))
-           ("Directories" (mode . dired-mode))
-           ("Magit" (or
-                     (mode . magit-blame-mode)
-                     (mode . magit-cherry-mode)
-                     (mode . magit-diff-mode)
-                     (mode . magit-log-mode)
-                     (mode . magit-process-mode)
-                     (mode . magit-status-mode)))
-           ("Fundamental" (or
-                           (mode . fundamental-mode)
-                           (mode . text-mode)))))
+                     (name . "^\\*copilot")))
+          ("Directories" (mode . dired-mode))
+          ("Magit" (name . "^magit"))
+          ("Fundamental" (or
+                          (mode . fundamental-mode)
+                          (mode . text-mode))))))
   :hook
   (ibuffer-mode . (lambda ()
                     (ibuffer-switch-to-saved-filter-groups "Main"))))
