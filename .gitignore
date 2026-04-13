@@ -21,6 +21,7 @@ transient/
 
 # projectile
 projectile-bookmarks.eld
+.projectile-cache.eld
 projects
 
 # cache
