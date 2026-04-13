@@ -227,7 +227,13 @@
               ("M-S-<left>" . org-shiftcontrolleft)
               ("M-S-<right>" . org-shiftcontrolright)
               ("M-S-<up>" . org-shiftcontrolup)
-              ("M-S-<down>" . org-shiftcontroldown))
+              ("M-S-<down>" . org-shiftcontroldown)
+              ;; keep opt-* behave like they do outside of org
+              ("M-<left>" . left-word)
+              ("M-<right>" . right-word)
+              ;; alternative binds for demotion/promotion
+              ("s-<left>" . org-do-promote)
+              ("s-<right>" . org-do-demote))
   :hook
   (org-mode . org-indent-mode))
 
