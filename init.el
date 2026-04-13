@@ -43,14 +43,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("6fc9e40b4375d9d8d0d9521505849ab4d04220ed470db0b78b700230da0a86c1"
+   '("4d5d11bfef87416d85673947e3ca3d3d5d985ad57b02a7bb2e32beaf785a100e"
+     "6fc9e40b4375d9d8d0d9521505849ab4d04220ed470db0b78b700230da0a86c1"
      default))
- '(package-selected-packages
-   '(ag all-the-icons-ibuffer cfn-mode color-theme-sanityinc-tomorrow
-        copilot corfu drag-stuff flycheck ibuffer-project
-        ibuffer-projectile magit marginalia markdown-mode neotree
-        orderless perspective pyvenv swiper vertico-prescient
-        vterm-toggle)))
+ '(package-selected-packages nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

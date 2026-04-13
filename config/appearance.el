@@ -39,7 +39,7 @@
                 " | %f %l:%C %*"))
 
 ;; theme
-(load-theme 'sanityinc-tomorrow-night t)
+(load-theme 'doom-vibrant t)
 
 (provide 'appearance)
 

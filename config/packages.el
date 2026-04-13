@@ -84,6 +84,10 @@
   (corfu-auto-delay 0.2)
   (corfu-auto-prefix 2))
 
+;; doom themes
+(use-package doom-themes
+  :ensure t)
+
 ;; drag stuff
 (use-package drag-stuff
   :ensure t
