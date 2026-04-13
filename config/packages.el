@@ -86,8 +86,8 @@
   :ensure t
   :config
   (drag-stuff-mode t))
-;; eglot (built-in LSP client)
 
+;; eglot (built-in LSP client)
 (use-package eglot
   :hook ((python-mode python-ts-mode) . eglot-ensure)
   :bind (:map python-mode-map
