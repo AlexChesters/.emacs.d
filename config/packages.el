@@ -76,6 +76,9 @@
   :ensure t
   :init
   (global-corfu-mode)
+  :hook
+  (markdown-mode . (lambda () (corfu-mode -1)))
+  (gfm-mode      . (lambda () (corfu-mode -1)))
   :custom
   (corfu-auto t)
   (corfu-auto-delay 0.2)
