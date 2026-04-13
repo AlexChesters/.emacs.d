@@ -202,7 +202,7 @@
   (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
   (global-set-key (kbd "C-c p") 'projectile-command-map)
   (setq projectile-indexing-method 'alien)
-  (setq projectile-enable-caching t)
+  (setq projectile-enable-caching 'persistent)
   (projectile-mode +1))
 
 ;; swiper
