@@ -5,10 +5,15 @@
 ;;; Code:
 
 ;;; declare functions/variables from deferred packages to silence byte-compiler
+
+;; variables
 (defvar python-mode-map)
 (defvar python-ts-mode-map)
 (defvar ibuffer-saved-filter-groups)
+
+;; functions
 (declare-function ibuffer-switch-to-saved-filter-groups "ibuffer" (name))
+(declare-function ibuffer-do-sort-by-alphabetic "ibuffer" () t)
 
 ;; ag
 (use-package ag
@@ -129,9 +134,15 @@
           ("Fundamental" (or
                           (mode . fundamental-mode)
                           (mode . text-mode))))))
+  ;; custom ibuffer setup
+  (defun atc/ibuffer-setup ()
+    (ibuffer-projectile-set-filter-groups)
+    (unless (eq ibuffer-sorting-mode 'alphabetic)
+      (ibuffer-do-sort-by-alphabetic)))
+  
   :hook
-  (ibuffer-mode . (lambda ()
-                    (ibuffer-switch-to-saved-filter-groups "Main"))))
+  (ibuffer-mode . atc/ibuffer-setup)
+  (ibuffer-update . atc/ibuffer-setup))
 
 ;; flycheck
 (use-package flycheck
