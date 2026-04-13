@@ -36,7 +36,12 @@
                 (:eval (if (bound-and-true-p projectile-mode)
                            projectile--mode-line
                          ""))
-                " | %f %l:%C %*"))
+                " | %f %l:%C"
+                (:eval (let ((time-str (format-time-string " %a %d %b %H:%M ")))
+                          (concat
+                           (propertize " "
+                                       'display `((space :align-to (- right ,(string-width time-str)))))
+                           time-str)))))
 
 ;; theme
 (load-theme 'doom-vibrant t)
