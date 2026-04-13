@@ -16,6 +16,11 @@
   :ensure t
   :defer t)
 
+;; all the icons ibuffer
+(use-package all-the-icons-ibuffer
+  :ensure t
+  :hook (ibuffer-mode . all-the-icons-ibuffer-mode))
+
 ;; cfn-mode
 (use-package cfn-mode
   :ensure t)
