@@ -201,7 +201,10 @@
   (setq neo-theme (if (display-graphic-p) 'icons 'arrow)) ;; set theme, icons if GUI, otherwise arrow
   (setq neo-window-width 40) ;; set neotree width
   (setq neo-show-hidden-files t) ;; show hidden files
-  (setq neo-smart-open t)) ;; open at current file
+  (setq neo-smart-open t) ;; open at current file
+  :hook
+  (neotree-mode . (lambda ()
+                     (display-line-numbers-mode -1))))
 
 ;; orderless
 (use-package orderless
