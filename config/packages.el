@@ -122,6 +122,7 @@
                      (name . "^\\*scratch\\*$")
                      (name . "^\\*Backtrace\\*$")
                      (name . "^\\*Messages\\*$")
+                     (name . "^\\*Warnings\\*$")
                      (name . "^\\*copilot"))))
            ("Directories" (mode . dired-mode))
            ("Magit" (or
