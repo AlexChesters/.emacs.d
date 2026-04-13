@@ -222,6 +222,12 @@
   (setq org-directory "~/org")
   (setq org-default-notes-file "~/org/inbox.org")
   (setq org-support-shift-select 'always)
+  :bind (:map org-mode-map
+              ;; keep shift-opt-* behave like they do outside of org
+              ("M-S-<left>" . org-shiftcontrolleft)
+              ("M-S-<right>" . org-shiftcontrolright)
+              ("M-S-<up>" . org-shiftcontrolup)
+              ("M-S-<down>" . org-shiftcontroldown))
   :hook
   (org-mode . org-indent-mode))
 
