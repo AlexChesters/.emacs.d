@@ -215,12 +215,13 @@
         completion-category-defaults nil
         completion-category-overrides '((file (styles partial-completion)))))
 
-;; org
+;; org-mode
 (use-package org
   :ensure t
   :config
   (setq org-directory "~/org")
   (setq org-default-notes-file "~/org/inbox.org")
+  (setq org-support-shift-select 'always)
   :hook
   (org-mode . org-indent-mode))
 
