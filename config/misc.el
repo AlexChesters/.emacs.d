@@ -47,6 +47,9 @@
 ;; skip fontification during input
 (setq redisplay-skip-fontification-on-input t)
 
+;; increase process output buffer for lsp
+(setq read-process-output-max (* 4 1024 1024)) ; 4MB
+
 (provide 'misc)
 
 ;;; misc.el ends here
