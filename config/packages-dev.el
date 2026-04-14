@@ -4,6 +4,10 @@
 
 ;;; Code:
 
+;; github-pull-requests
+(use-package github-pull-requests
+  :load-path "~/code/github-pull-requests.el")
+
 ;; jsonl-mode
 (use-package jsonl-mode
   :defer t
