@@ -44,6 +44,9 @@
               bidi-paragraph-direction 'left-to-right)
 (setq bidi-inhibit-bpa t)
 
+;; skip fontification during input
+(setq redisplay-skip-fontification-on-input t)
+
 (provide 'misc)
 
 ;;; misc.el ends here
