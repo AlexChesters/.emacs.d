@@ -50,6 +50,10 @@
 ;; increase process output buffer for lsp
 (setq read-process-output-max (* 4 1024 1024)) ; 4MB
 
+;; don't render cursors in non-focused windows
+(setq-default cursor-in-non-selected-windows nil)
+(setq highlight-nonselected-windows nil)
+
 (provide 'misc)
 
 ;;; misc.el ends here
