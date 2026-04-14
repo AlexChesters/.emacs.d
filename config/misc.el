@@ -39,6 +39,11 @@
 ;; empty scratch buffer
 (setq initial-scratch-message ";;; -*- lexical-binding: t; -*-\n\n")
 
+;; disable bidirectional text support for better performance
+(setq-default bidi-display-reordering 'left-to-right
+              bidi-paragraph-direction 'left-to-right)
+(setq bidi-inhibit-bpa t)
+
 (provide 'misc)
 
 ;;; misc.el ends here
