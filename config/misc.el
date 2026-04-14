@@ -1,4 +1,4 @@
-;;; misc.el --- Miscellanous config
+;;; misc.el --- Miscellanous config -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 
@@ -35,6 +35,9 @@
 ;; nodejs
 (add-to-list 'exec-path "/Users/alex/.nvm/versions/node/v24.14.1/bin")
 (setenv "PATH" (concat "/Users/alex/.nvm/versions/node/v24.14.1/bin:" (getenv "PATH")))
+
+;; empty scratch buffer
+(setq initial-scratch-message ";;; -*- lexical-binding: t; -*-\n\n")
 
 (provide 'misc)
 
