@@ -159,6 +159,18 @@
   (ibuffer-mode . atc/ibuffer-setup)
   (ibuffer-update . atc/ibuffer-setup))
 
+;; iedit
+(use-package iedit
+  :ensure t
+  :defer t
+  :bind (:map iedit-mode-keymap
+              ("<return>" . iedit-quit))
+  :config
+  (defun iedit-quit ()
+    "Exit iedit-mode."
+    (interactive)
+    (iedit-mode -1)))
+
 ;; flycheck
 (use-package flycheck
   :ensure t
