@@ -166,6 +166,9 @@
   :hook
   (prog-mode . flycheck-mode)
   :config
+  ;; set flycheck to inherit load path
+  ;; especially useful for developing elisp packages that depend on other elisp packages
+  (setq flycheck-emacs-lisp-load-path 'inherit)
   (flycheck-define-checker cfn-lint
     "A Cloudformation linter using cfn-python-lint."
     :command ("cfn-lint" "-f" "parseable" source)
