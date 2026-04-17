@@ -10,6 +10,7 @@
 (defvar python-mode-map)
 (defvar python-ts-mode-map)
 (defvar ibuffer-saved-filter-groups)
+(defvar ibuffer-hidden-filter-groups)
 
 ;; functions
 (declare-function ibuffer-switch-to-saved-filter-groups "ibuffer" (name))
@@ -147,7 +148,8 @@
   (defun atc/ibuffer-setup ()
     (ibuffer-projectile-set-filter-groups)
     (unless (eq ibuffer-sorting-mode 'alphabetic)
-      (ibuffer-do-sort-by-alphabetic)))
+      (ibuffer-do-sort-by-alphabetic))
+    (setq ibuffer-hidden-filter-groups '("Default" "Directories" "Magit")))
   
   :hook
   (ibuffer-mode . atc/ibuffer-setup)
