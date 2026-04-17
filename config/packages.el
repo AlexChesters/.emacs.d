@@ -108,6 +108,10 @@
   (add-to-list 'eglot-server-programs
                '((python-mode python-ts-mode) . ("pyright-langserver" "--stdio"))))
 
+;; gitignore mode
+(use-package gitignore-mode
+  :defer t)
+
 ;; git commit
 (use-package git-commit
   :defer t
