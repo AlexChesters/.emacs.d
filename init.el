@@ -46,8 +46,8 @@
  '(custom-safe-themes
    '("4d5d11bfef87416d85673947e3ca3d3d5d985ad57b02a7bb2e32beaf785a100e" "6fc9e40b4375d9d8d0d9521505849ab4d04220ed470db0b78b700230da0a86c1" default))
  '(package-selected-packages
-   '(ag all-the-icons-ibuffer badger-theme cfn-mode color-theme-sanityinc-tomorrow copilot corfu doom-themes drag-stuff flycheck ibuffer-project ibuffer-projectile
-        iedit magit marginalia markdown-mode neotree orderless perspective pyvenv swiper vertico-prescient vterm-toggle)))
+   '(ag all-the-icons-ibuffer cfn-mode color-theme-sanityinc-tomorrow company copilot corfu doom-themes drag-stuff flycheck highlight-indentation ht
+        ibuffer-projectile iedit lv magit marginalia markdown-mode neotree orderless pyvenv spinner swiper vertico-prescient vterm-toggle yasnippet)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
