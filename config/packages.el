@@ -87,6 +87,11 @@
   (corfu-auto-delay 0.2)
   (corfu-auto-prefix 2))
 
+;; dockerfile
+(use-package dockerfile-mode
+  :ensure t
+  :defer t)
+
 ;; doom themes
 (use-package doom-themes
   :ensure t)
