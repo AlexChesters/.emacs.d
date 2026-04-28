@@ -4,6 +4,10 @@
 
 ;;; Code:
 
+;; alists
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-ts-mode))
+
 ;; set default directory to emacs config directory
 (setq default-directory "~/.emacs.d")
 
