@@ -39,3 +39,6 @@ tramp
 
 # org stuff
 bookmarks
+
+# tree sitter stuff
+tree-sitter/
