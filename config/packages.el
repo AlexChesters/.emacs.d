@@ -200,7 +200,12 @@
     :modes (cfn-mode))
   (add-to-list 'flycheck-checkers 'cfn-lint))
 
-;; magict
+;; js
+(use-package js
+  :custom
+  (js-indent-level 2))
+
+;; magit
 (use-package magit
   :ensure t
   :defer t)
